@@ -3,9 +3,11 @@
 //home, insights, cards, Settings
 
 import 'package:flutter/material.dart';
-import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard_insights.dart';
+import 'package:orange_hackathon_flutter/views/widgets/dashboard_insights_graph.dart';
 
+// import '../../widgets/dashboard_insights.dart';
 import 'dashboard_home.dart';
+import 'dashboard_insights.dart';
 // import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard_home.dart';
 
 class Dashboard extends StatefulWidget {
@@ -20,6 +22,7 @@ class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     DashboardHome(),
+    // Text("Insights Page"),
     DashboardInsights(),
     Text('Scan transaction'),
     Text('Cards Page'),

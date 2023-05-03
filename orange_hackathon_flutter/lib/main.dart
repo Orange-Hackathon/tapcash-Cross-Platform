@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orange_hackathon_flutter/assets/colors.dart';
-import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard.dart';
-import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard_home.dart';
+import '../assets/colors.dart';
+import '../views/screens/dashboard/dashboard.dart';
+import '../views/screens/dashboard/dashboard_home.dart';
+import '../views/screens/dashboard/dashboard_insights.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         DashboardHome.routename: (ctx) => const DashboardHome(),
         Dashboard.routename: (ctx) => const Dashboard(),
+        DashboardInsights.routename: (ctx) => const DashboardInsights(),
       },
       debugShowCheckedModeBanner: false,
     );

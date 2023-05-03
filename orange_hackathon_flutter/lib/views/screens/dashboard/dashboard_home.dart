@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-import '../../../models/dashboard/dashboard_home_model.dart';
 import '../../../models/dashboard/dashboard_home_model.dart';
 
 class DashboardHome extends StatelessWidget {
@@ -64,15 +62,15 @@ class DashboardHome extends StatelessWidget {
                       InkWell(
                         onTap: () {},
                         child: Column(
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               Icons.send,
                               size: 30,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
-                            const Text(
+                            Text(
                               "Send",
                               style: TextStyle(
                                 fontSize: 15,
@@ -85,15 +83,15 @@ class DashboardHome extends StatelessWidget {
                       InkWell(
                         onTap: () {},
                         child: Column(
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               Icons.request_page,
                               size: 30,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
-                            const Text(
+                            Text(
                               "Payment",
                               style: TextStyle(
                                 fontSize: 15,
@@ -106,17 +104,17 @@ class DashboardHome extends StatelessWidget {
                       InkWell(
                         onTap: () {},
                         child: Column(
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               // Icons.history,
                               //icon for bill
                               Icons.history_edu,
                               size: 30,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 10,
                             ),
-                            const Text(
+                            Text(
                               "Bill",
                               style: TextStyle(
                                 fontSize: 15,
@@ -188,7 +186,7 @@ class DashboardHome extends StatelessWidget {
                       children: [
                         //iterate over the list of children and display them
                         for (var child in children)
-                          child_icon_for_parent(
+                          ChildIconForParent(
                             childImage: child.childImage,
                             childName: child.childName,
                           ),
@@ -252,11 +250,11 @@ class DashboardHome extends StatelessWidget {
   }
 }
 
-class child_icon_for_parent extends StatelessWidget {
-  child_icon_for_parent({
+class ChildIconForParent extends StatelessWidget {
+  ChildIconForParent({
     Key? key,
-    required String? this.childName,
-    required String? this.childImage,
+    required this.childName,
+    required this.childImage,
   }) : super(key: key);
   String? childName;
   String? childImage;
