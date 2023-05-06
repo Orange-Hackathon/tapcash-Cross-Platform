@@ -3,6 +3,7 @@
 //home, insights, cards, Settings
 
 import 'package:flutter/material.dart';
+import 'package:orange_hackathon_flutter/models/dashboard/dashboard_home_model.dart';
 import 'package:orange_hackathon_flutter/views/widgets/dashboard_insights_graph.dart';
 
 // import '../../widgets/dashboard_insights.dart';
@@ -23,6 +24,8 @@ class _DashboardState extends State<Dashboard> {
   static const List<Widget> _widgetOptions = <Widget>[
     DashboardHome(),
     // Text("Insights Page"),
+    // DashboardInsights(),
+    // Text('Insights Page'),
     DashboardInsights(),
     Text('Scan transaction'),
     Text('Cards Page'),
@@ -52,23 +55,16 @@ class _DashboardState extends State<Dashboard> {
             left: 0,
             right: 0,
             child: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home_filled), label: 'Home'),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.bar_chart), label: 'Insights'),
+              items: <BottomNavigationBarItem>[
+                BottomNavigationBarItem(icon: home_icon, label: 'Home'),
+                BottomNavigationBarItem(icon: insights_icon, label: 'Insights'),
                 BottomNavigationBarItem(icon: SizedBox.shrink(), label: ''),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.credit_card), label: 'Cards'),
-                BottomNavigationBarItem(
-                    //profile icon is invoked using :
-
-                    icon: Icon(Icons.account_circle),
-                    label: 'Profile'),
+                BottomNavigationBarItem(icon: card_icon, label: 'Cards'),
+                BottomNavigationBarItem(icon: user_icon, label: 'Profile'),
               ],
               currentIndex: _selectedIndex,
-              selectedItemColor: Colors.deepPurple,
-              unselectedItemColor: Colors.grey,
+              selectedItemColor: Color(0xFF333E96),
+              unselectedItemColor: Color(0xFF1A1A1A),
               onTap: _onItemTapped,
             ),
           ),
@@ -81,26 +77,23 @@ class _DashboardState extends State<Dashboard> {
                 () {};
               },
               child: Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.8),
-                      spreadRadius: 2,
-                      blurRadius: 10,
-                      offset: const Offset(0, 5), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: const Icon(
-                  Icons.qr_code_scanner_rounded,
-                  color: Colors.deepPurpleAccent,
-                  size: 30,
-                ),
-              ),
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: qr_gradient,
+                    // color: Color.fromARGB(a, r, g, b),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.8),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset:
+                            const Offset(0, 5), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: qr_icon),
             ),
           ),
         ],

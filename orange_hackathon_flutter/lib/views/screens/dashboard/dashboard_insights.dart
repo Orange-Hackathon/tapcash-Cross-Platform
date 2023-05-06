@@ -1,8 +1,9 @@
 //a scaffold that contains the insights of the user
 import 'package:flutter/material.dart';
-import 'package:orange_hackathon_flutter/views/widgets/dashboard_insights_graph.dart';
 
 import '../../../models/dashboard/hist_demo.dart';
+import '../../widgets/bar_graph.dart';
+import '../../widgets/pie_graph.dart';
 
 class DashboardInsights extends StatelessWidget {
   static const routename = '/dashboard/insights';
@@ -12,21 +13,42 @@ class DashboardInsights extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // leading: ,
         //title of the page
         title: const Text('Insights'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Scaffold(
-              body: Center(child: Container()
-                  //builds the insights widget that contains the insights of the user from widgets/dashboard_insights_graph.dart
-                  // HistogramChart(data: weeklyTransactions, title: 'Weekly transactions'),
-                  ),
-            )
-          ],
-        ),
+        child: Column(children: [
+          SizedBox(
+            child: Container(
+              child: BarChartSample3(),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.0),
+                color: Colors.white,
+                // color: const Colors.White,
+              ),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+            ),
+            width: 312,
+            height: 176,
+          ),
+          // Text( "Categories"),
+          SizedBox(
+            child: Container(
+              child: PieChartSample2(),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.0),
+                color: Colors.white,
+                // color: const Colors.White,
+              ),
+              width: MediaQuery.of(context).size.width,
+              // height: MediaQuery.of(context).size.height,
+            ),
+            width: 312,
+            height: 176,
+          ),
+        ]),
       ),
     );
   }

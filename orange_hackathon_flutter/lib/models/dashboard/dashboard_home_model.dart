@@ -66,13 +66,82 @@ List<Transaction> transactions = [
       trailing: 1000),
 ];
 
-Widget add_icon = SvgPicture.asset(
-  'assets/dashboard/add_icon.svg',
-  semanticsLabel: 'add_icon',
+final Widget add_icon = Image.asset(
+  "assets/images/dashboard/add_icon.png",
+  height: 43,
+  width: 43,
+  // color: Colors.,
 );
-// Widget add_icon = SvgPicture.asset(
-//       'assets/dashboard/add_icon.svg',
-//       semanticsLabel: 'add_icon',
-//     );
-
+final Widget send_icon = Image.asset(
+  "assets/images/dashboard/send_icon.png",
+  height: 27,
+  width: 32,
+  // color: Colors.,
+);
+final Widget payment_icon = Image.asset(
+  "assets/images/dashboard/payment.png",
+  height: 36,
+  width: 36,
+  // color: Colors.,
+);
+final Widget bill_icon = Image.asset(
+  "assets/images/dashboard/bill.png",
+  height: 31,
+  width: 32,
+  // color: Colors.,
+);
+final Widget card_icon = Image.asset(
+  "assets/images/dashboard/card.png",
+  height: 32,
+  width: 32,
+  // color: Colors.,
+);
+final Widget home_icon = Image.asset(
+  "assets/images/dashboard/home.png",
+  height: 32,
+  width: 32,
+  // color: Colors.,
+);
+final Widget insights_icon = Image.asset(
+  "assets/images/dashboard/insights.png",
+  height: 32,
+  width: 32,
+  // color: Colors.,
+);
+final Widget user_icon = Image.asset(
+  "assets/images/dashboard/user.png",
+  height: 32,
+  width: 32,
+  // color: Colors.,
+);
+final Widget qr_icon = Image.asset(
+  "assets/images/dashboard/QR.png",
+  height: 32,
+  width: 32,
+  // color: Colors.,
+);
+final Widget notification_icon = Image.asset(
+  "assets/images/dashboard/notification.png",
+  height: 24,
+  width: 22,
+  // color: Colors.,
+);
+final Widget boy_icon = Image.asset(
+  "assets/images/dashboard/boy.png",
+  height: 30,
+  width: 26,
+);
+final Widget girl_icon = Image.asset(
+  "assets/images/dashboard/girl.png",
+  height: 30,
+  width: 26,
+);
+final Gradient qr_gradient = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    Color(0xFF636EC1),
+    Color(0xFF333E96),
+  ],
+);
 //icons

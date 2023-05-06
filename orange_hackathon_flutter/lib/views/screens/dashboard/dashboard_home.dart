@@ -165,10 +165,7 @@ class DashboardHome extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: const Icon(
-                          Icons.add,
-                          size: 30,
-                        ),
+                        child: add_icon,
                       ),
                     ],
                   ),

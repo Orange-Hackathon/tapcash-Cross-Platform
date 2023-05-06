@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../assets/colors.dart';
-import '../views/screens/dashboard/dashboard.dart';
-import '../views/screens/dashboard/dashboard_home.dart';
-import '../views/screens/dashboard/dashboard_insights.dart';
+import 'package:orange_hackathon_flutter/constants/colors.dart';
+import 'views/screens/dashboard/dashboard.dart';
+import 'views/screens/dashboard/dashboard_home.dart';
+import 'views/screens/dashboard/dashboard_insights.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TAPcash',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         primarySwatch: blueShade, //Colors.deepPurple, //CCCE96
       ),
       home: const MyHomePage(title: 'TAPcash'),

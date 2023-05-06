@@ -1,3 +1,21 @@
+// import 'package:fl_chart/fl_chart.dart';
+// import 'package:flutter/material.dart';
+
+// Widget barChart = BarChart(
+//       BarChartData(
+//         barTouchData: barTouchData,
+//         titlesData: titlesData,
+//         borderData: borderData,
+//         barGroups: barGroups,
+//         gridData: FlGridData(show: false),
+//         alignment: BarChartAlignment.spaceAround,
+//         maxY: 20,
+//       ),
+
+//   swapAnimationDuration: Duration(milliseconds: 150), // Optional
+//   swapAnimationCurve: Curves.linear, // Optional
+// );
+
 // import 'package:flutter/material.dart';
 // import 'package:charts_flutter/flutter.dart' as charts;
 
