@@ -1,5 +1,6 @@
 //define a class for child
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Child {
   String childName;
@@ -63,5 +64,15 @@ List<Transaction> transactions = [
       header: 'Shopping',
       subHeader: 'Shopping at Carrefour',
       trailing: 1000),
-      
 ];
+
+Widget add_icon = SvgPicture.asset(
+  'assets/dashboard/add_icon.svg',
+  semanticsLabel: 'add_icon',
+);
+// Widget add_icon = SvgPicture.asset(
+//       'assets/dashboard/add_icon.svg',
+//       semanticsLabel: 'add_icon',
+//     );
+
+//icons
