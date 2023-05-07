@@ -43,6 +43,7 @@ dependencies:
   intl_phone_field: ^3.1.0
   hexcolor: ^3.0.1
   http: ^0.13.5
+  flutter_launcher_icons: ^0.12.0
 
 
 dev_dependencies:
@@ -58,6 +59,15 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  # optionally, as transparency is not allowed on app store
+  # remove_alpha_ios: true
+  # optionally, as transparency is not allowed on app store
+  # remove_alpha_ios: true
 
 # The following section is specific to Flutter packages.
 flutter:

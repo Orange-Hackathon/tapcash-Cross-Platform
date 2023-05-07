@@ -90,6 +90,7 @@ class CreateNewPin extends State<CreateNewPinScreen> {
                   color: HexColor("#EFEFEF"),
                 ),
                 child: TextFormField(
+                  cursorColor: Colors.black,
                   maxLength: 4,
                   obscureText: true,
                   obscuringCharacter: '•',
@@ -136,6 +137,7 @@ class CreateNewPin extends State<CreateNewPinScreen> {
                   color: HexColor("#EFEFEF"),
                 ),
                 child: TextFormField(
+                  cursorColor: Colors.black,
                   maxLength: 4,
                   obscureText: true,
                   obscuringCharacter: '•',

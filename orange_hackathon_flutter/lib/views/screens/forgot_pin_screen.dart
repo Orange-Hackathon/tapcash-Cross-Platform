@@ -97,6 +97,7 @@ class ForgotPin extends State<ForgotPinScreen> {
                   padding:
                       const EdgeInsets.only(top: 14.4, bottom: 14.4, left: 16),
                   child: TextFormField(
+                    cursorColor: Colors.black,
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     onTap: () {

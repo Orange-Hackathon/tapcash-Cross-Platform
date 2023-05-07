@@ -73,6 +73,7 @@ class Login extends State<LoginScreen> {
                   padding:
                       const EdgeInsets.only(top: 14.4, bottom: 14.4, left: 16),
                   child: TextFormField(
+                    cursorColor: Colors.black,
                     controller: phoneController,
                     keyboardType: TextInputType.phone,
                     onTap: () {
@@ -108,6 +109,7 @@ class Login extends State<LoginScreen> {
                   padding:
                       const EdgeInsets.only(top: 14.4, bottom: 14.4, left: 16),
                   child: TextFormField(
+                    cursorColor: Colors.black,
                     controller: pinController,
                     keyboardType: TextInputType.number,
                     onTap: () {
