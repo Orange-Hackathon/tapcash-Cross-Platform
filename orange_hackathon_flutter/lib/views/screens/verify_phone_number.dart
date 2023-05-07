@@ -29,7 +29,7 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 50,
+            height: 46,
           ),
           const Center(
             child: Text(
@@ -41,11 +41,11 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
             ),
           ),
           const SizedBox(
-            height: 45,
+            height: 32,
           ),
           Container(
             margin: EdgeInsets.zero,
-            padding: EdgeInsets.symmetric(horizontal: 80),
+            padding: const EdgeInsets.symmetric(horizontal: 34.5),
             child: PinCodeTextField(
               onChanged: (value) {
                 debugPrint(value);
@@ -77,6 +77,7 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
                   return null;
                 }
               },
+
               pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(8),
@@ -105,6 +106,8 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
               ],
               onCompleted: (v) {
                 debugPrint("Completed");
+                widget.pageController
+                    .nextPage(duration: _kDuration, curve: _kCurve);
               },
               // onTap: () {
               //   print("Pressed");
@@ -121,7 +124,7 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
           //const SizedBox(height: 8),
           Container(
             margin: EdgeInsets.zero,
-            padding: const EdgeInsets.symmetric(horizontal: 80),
+            padding: const EdgeInsets.symmetric(horizontal: 34.5),
             child: TextButton(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
