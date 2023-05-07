@@ -9,8 +9,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      splash: 'assets/images/wallet.png',
-      splashIconSize: 230,
+      splash: 'assets/images/logo.png',
+      splashIconSize: 268,
       nextScreen: const OnBoardingScreen(),
       splashTransition: SplashTransition.rotationTransition,
       // pageTransitionType: PageTransitionType.scale,
