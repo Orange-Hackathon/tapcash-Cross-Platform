@@ -173,7 +173,7 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                 ],
               ),
               SizedBox(
-                height: 0.44 * screenHeight,
+                height: 0.48 * screenHeight,
               ),
               Consumer<AuthenticationProvider>(
                 builder: (context, value, child) => Padding(

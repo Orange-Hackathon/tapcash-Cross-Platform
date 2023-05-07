@@ -54,7 +54,7 @@ class OnBoarding extends State<OnBoardingScreen> {
     return Scaffold(
         body: Column(
       children: [
-        const SizedBox(height: 80),
+        const SizedBox(height: 75),
         (currentIndex != 0)
             ? Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -71,7 +71,7 @@ class OnBoarding extends State<OnBoardingScreen> {
                 ),
               )
             : const Padding(padding: EdgeInsets.all(0)),
-        const SizedBox(height: 20),
+        const SizedBox(height: 4),
         Expanded(
           child: Stack(
             children: <Widget>[

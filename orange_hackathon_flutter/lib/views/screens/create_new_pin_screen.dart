@@ -36,7 +36,7 @@ class CreateNewPin extends State<CreateNewPinScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 30,
+              height: 75,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -52,7 +52,7 @@ class CreateNewPin extends State<CreateNewPinScreen> {
               ),
             ),
             const SizedBox(
-              height: 44,
+              height: 18,
             ),
             const Center(
               child: Text(
@@ -156,7 +156,7 @@ class CreateNewPin extends State<CreateNewPinScreen> {
               ),
             ),
             SizedBox(
-              height: 0.33 * screenHeight,
+              height: 0.386 * screenHeight,
             ),
             Padding(
                 padding: const EdgeInsets.symmetric(

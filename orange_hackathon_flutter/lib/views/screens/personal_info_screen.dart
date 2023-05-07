@@ -36,7 +36,7 @@ class PersonalInfo extends State<PersonalInfoScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 50,
+            height: 32,
           ),
           const Text(
             "Personal info",
@@ -69,12 +69,12 @@ class PersonalInfo extends State<PersonalInfoScreen> {
             child: Padding(
               padding: const EdgeInsets.only(top: 14.4, bottom: 14.4, left: 16),
               child: TextFormField(
+                cursorColor: Colors.black,
                 controller: firstNameController,
                 keyboardType: TextInputType.name,
                 onTap: () {
                   setState(() {
                     isLabelVisible1 = false;
-
                   });
                 },
                 decoration: InputDecoration(
@@ -101,12 +101,12 @@ class PersonalInfo extends State<PersonalInfoScreen> {
             child: Padding(
               padding: const EdgeInsets.only(top: 14.4, bottom: 14.4, left: 16),
               child: TextFormField(
+                cursorColor: Colors.black,
                 controller: lastNameController,
                 keyboardType: TextInputType.name,
                 onTap: () {
                   setState(() {
                     isLabelVisible2 = false;
- 
                   });
                 },
                 decoration: InputDecoration(
@@ -133,12 +133,12 @@ class PersonalInfo extends State<PersonalInfoScreen> {
             child: Padding(
               padding: const EdgeInsets.only(top: 14.4, bottom: 14.4, left: 16),
               child: TextFormField(
+                cursorColor: Colors.black,
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 onTap: () {
                   setState(() {
                     isLabelVisible3 = false;
-
                   });
                 },
                 decoration: InputDecoration(
@@ -153,23 +153,21 @@ class PersonalInfo extends State<PersonalInfoScreen> {
             ),
           ),
           SizedBox(
-            height: 0.23 * screenHeight,
+            height: 0.33 * screenHeight,
           ),
           //Spacer(),
-          Padding(
-              padding: const EdgeInsets.only(left: 24, right: 24, bottom: 0),
-              child: Container(
-                height: 48,
-                width: 312,
-                child: DefaultButton(
-                    onSubmitted: () {
-                      widget.pageController
-                          .nextPage(duration: _kDuration, curve: _kCurve);
-                    },
-                    color: HexColor("#E3E3E4"),
-                    textColor: HexColor("#939094"),
-                    text: "Next"),
-              )),
+          Container(
+            height: 48,
+            width: 312,
+            child: DefaultButton(
+                onSubmitted: () {
+                  widget.pageController
+                      .nextPage(duration: _kDuration, curve: _kCurve);
+                },
+                color: HexColor("#E3E3E4"),
+                textColor: HexColor("#939094"),
+                text: "Next"),
+          )
         ],
       ),
     ));

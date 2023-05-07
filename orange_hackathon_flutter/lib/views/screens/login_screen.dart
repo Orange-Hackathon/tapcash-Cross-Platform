@@ -32,7 +32,7 @@ class Login extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 30,
+              height: 75,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -154,7 +154,7 @@ class Login extends State<LoginScreen> {
                   )),
             ),
             SizedBox(
-              height: 0.3 * screenHeight,
+              height: 0.30 * screenHeight,
             ),
             Padding(
                 padding: const EdgeInsets.symmetric(

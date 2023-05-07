@@ -29,7 +29,7 @@ class ForgotPin extends State<ForgotPinScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 30,
+              height: 75,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -45,7 +45,7 @@ class ForgotPin extends State<ForgotPinScreen> {
               ),
             ),
             const SizedBox(
-              height: 49,
+              height: 48.5,
             ),
             Image.asset(
               "assets/images/password-reset.png",
@@ -53,7 +53,7 @@ class ForgotPin extends State<ForgotPinScreen> {
               width: 51,
             ),
             const SizedBox(
-              height: 21,
+              height: 20.5,
             ),
             const Text(
               "Forgot PIN?",
@@ -117,7 +117,7 @@ class ForgotPin extends State<ForgotPinScreen> {
                 ),
               ),
             ),
-            SizedBox(height: .35 * screenHeight),
+            SizedBox(height: .39 * screenHeight),
             Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,
