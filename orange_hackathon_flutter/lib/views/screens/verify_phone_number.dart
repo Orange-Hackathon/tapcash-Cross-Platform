@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyPhoneNumberScreen extends StatefulWidget {
-  const VerifyPhoneNumberScreen({super.key});
+  late PageController pageController;
+  VerifyPhoneNumberScreen({super.key, required this.pageController});
 
   @override
   State<StatefulWidget> createState() {
@@ -17,23 +19,33 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
   bool hasError = false;
   String currentText = "";
 
+  static const _kDuration = Duration(milliseconds: 300);
+  static const _kCurve = Curves.ease;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 100,
+            height: 50,
           ),
-          const Text(
-            "Verify your number",
-            style: TextStyle(fontWeight: FontWeight.bold),
+          const Center(
+            child: Text(
+              "Verify your number",
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  fontFamily: 'poppins'),
+            ),
           ),
           const SizedBox(
-            height: 100,
+            height: 45,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+          Container(
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.symmetric(horizontal: 80),
             child: PinCodeTextField(
               onChanged: (value) {
                 debugPrint(value);
@@ -43,16 +55,23 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
               },
               appContext: context,
               pastedTextStyle: TextStyle(
-                color: Colors.green.shade600,
-                fontWeight: FontWeight.bold,
-              ),
-              length: 4,
-              obscureText: true,
+                  color: HexColor("#1A1A1A"),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  fontFamily: 'poppins'),
+
+              textStyle: TextStyle(
+                  color: HexColor("#1A1A1A"),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  fontFamily: 'poppins'),
+              length: 6,
+              obscureText: false,
               obscuringCharacter: '#',
               blinkWhenObscuring: true,
               animationType: AnimationType.fade,
               validator: (v) {
-                if (v!.length < 3) {
+                if (v!.length < 5) {
                   //return "I'm from validator";
                 } else {
                   return null;
@@ -60,18 +79,17 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
               },
               pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(5),
-                  fieldHeight: 50,
-                  fieldWidth: 40,
-                  activeFillColor: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  fieldHeight: 36.5,
+                  fieldWidth: 32,
+                  activeFillColor: HexColor("#EFEFEF"),
                   //disabledColor: Colors.amber,
-                  inactiveFillColor:const Color.fromARGB(255, 208, 205, 205),
-                  inactiveColor:  const Color.fromARGB(255, 208, 205, 205),
-                  activeColor: Colors.white,
-                  selectedColor: Colors.greenAccent,
-                  selectedFillColor: Colors.white
-                  
-                  ),
+                  inactiveFillColor: HexColor("#EFEFEF"),
+                  inactiveColor: HexColor("#EFEFEF"),
+                  activeColor: HexColor("#EFEFEF"),
+                  selectedColor: Colors.white,
+                  selectedFillColor: Colors.white,
+                  fieldOuterPadding: EdgeInsets.all(0)),
               cursorColor: Colors.black,
               animationDuration: const Duration(milliseconds: 300),
               enableActiveFill: true,
@@ -100,10 +118,34 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
               },
             ),
           ),
+          //const SizedBox(height: 8),
+          Container(
+            margin: EdgeInsets.zero,
+            padding: const EdgeInsets.symmetric(horizontal: 80),
+            child: TextButton(
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                      EdgeInsets.zero),
 
-          const SizedBox(height:40),
-          DefaultButton(onSubmitted: (){}, color: Colors.greenAccent, textColor: Colors.white, text: 'Verify'),
-
+                  overlayColor:
+                      MaterialStateProperty.all<Color>(Colors.transparent),
+                  shadowColor:
+                      MaterialStateProperty.all<Color>(Colors.transparent),
+                  // You can add other ButtonStyle properties as needed
+                ),
+                onPressed: () {
+                  widget.pageController
+                      .nextPage(duration: _kDuration, curve: _kCurve);
+                },
+                child: Text(
+                  'Resend',
+                  style: TextStyle(
+                      fontSize: 10,
+                      fontFamily: 'poppins',
+                      color: HexColor("#939094"),
+                      fontWeight: FontWeight.w400),
+                )),
+          )
         ],
       ),
     );

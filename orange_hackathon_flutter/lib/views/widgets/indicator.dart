@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Indicator extends StatelessWidget {
   final int positionIndex, currentIndex;
@@ -6,12 +7,12 @@ class Indicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 12,
-      width: 12,
+      height: 8,
+      width: 8,
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.greenAccent),
+          border: Border.all(color:(positionIndex == currentIndex)? HexColor("#1A1A1A"): HexColor("#CCCCCC")),
           color:
-              positionIndex == currentIndex ? Colors.greenAccent : Colors.transparent,
+              positionIndex == currentIndex ? HexColor("#1A1A1A") : HexColor("#CCCCCC"),
           borderRadius: BorderRadius.circular(100)),
     );
   }

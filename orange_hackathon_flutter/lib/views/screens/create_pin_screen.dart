@@ -1,40 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
+import 'package:orange_hackathon_flutter/views/screens/confirm_pin_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/personal_info_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/splash_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class CreatePinScreen extends StatefulWidget
-{
-  const CreatePinScreen({super.key});
-   @override
+class CreatePinScreen extends StatefulWidget {
+  late PageController pageController;
+  CreatePinScreen({super.key, required this.pageController});
+  @override
   State<StatefulWidget> createState() {
     return CreatePin();
   }
 }
 
-class CreatePin extends State<CreatePinScreen>
-{
+class CreatePin extends State<CreatePinScreen> {
   TextEditingController textEditingController = TextEditingController();
+  FocusNode pinCodeFocusNode = FocusNode();
+  static const _kDuration = Duration(milliseconds: 300);
+  static const _kCurve = Curves.ease;
 
   bool hasError = false;
   String currentText = "";
   @override
   Widget build(BuildContext context) {
-        return SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
           const SizedBox(
-            height: 100,
+            height: 50,
           ),
           const Text(
-            "Create pin",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            "Create PIN",
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                fontFamily: 'poppins'),
           ),
           const SizedBox(
-            height: 100,
+            height: 8,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+          Text(
+            "It will be your access to any action",
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 10,
+                fontFamily: 'poppins',
+                color: HexColor("#5E5E5E")),
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          Container(
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.symmetric(horizontal: 120),
             child: PinCodeTextField(
+              focusNode: pinCodeFocusNode,
+              autoFocus: true,
               onChanged: (value) {
                 debugPrint(value);
                 setState(() {
@@ -43,34 +68,40 @@ class CreatePin extends State<CreatePinScreen>
               },
               appContext: context,
               pastedTextStyle: TextStyle(
-                color: Colors.green.shade600,
-                fontWeight: FontWeight.bold,
-              ),
+                  color: HexColor("#333E96"),
+                  fontWeight: FontWeight.w100,
+                  fontSize: 1,
+                  fontFamily: 'poppins'),
+
+              textStyle: TextStyle(
+                  color: HexColor("#333E96"),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 1,
+                  fontFamily: 'poppins'),
               length: 4,
-              obscureText: true,
+              obscureText: false,
               obscuringCharacter: '#',
               blinkWhenObscuring: true,
               animationType: AnimationType.fade,
               validator: (v) {
-                if (v!.length < 3) {
-                  //return "I'm from validator";
+                if (v!.length < 5) {
                 } else {
                   return null;
                 }
               },
               pinTheme: PinTheme(
-                  shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(5),
-                  fieldHeight: 50,
-                  fieldWidth: 40,
-                  activeFillColor: Colors.white,
-                  //disabledColor: Colors.amber,
-                  inactiveFillColor: const Color.fromARGB(255, 208, 205, 205),
-                  inactiveColor: const Color.fromARGB(255, 208, 205, 205),
-                  activeColor: Colors.white,
-                  selectedColor: Colors.greenAccent,
-                  selectedFillColor: Colors.white),
-              cursorColor: Colors.black,
+                  shape: PinCodeFieldShape.circle,
+                  borderRadius: BorderRadius.circular(8),
+                  fieldHeight: 14,
+                  fieldWidth: 14,
+                  activeFillColor: HexColor("#333E96"),
+                  inactiveFillColor: HexColor("#CCCCCC"),
+                  inactiveColor: HexColor("#CCCCCC"),
+                  activeColor: HexColor("#333E96"),
+                  selectedColor: HexColor("#CCCCCC"),
+                  selectedFillColor: HexColor("#CCCCCC"),
+                  fieldOuterPadding: EdgeInsets.all(0)),
+              cursorColor: HexColor("#CCCCCC"),
               animationDuration: const Duration(milliseconds: 300),
               enableActiveFill: true,
 
@@ -83,8 +114,24 @@ class CreatePin extends State<CreatePinScreen>
                   blurRadius: 10,
                 )
               ],
+
               onCompleted: (v) {
                 debugPrint("Completed");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ConfirmPinScreen()));
+                // pinCodeFocusNode.dispose();
+                // pinCodeFocusNode=FocusNode();
+
+                // showDefaultBottomSheet(
+                //     context,
+                //     'Your account has been created successfully',
+                //     '',
+                //     'Login', () {
+                //       Navigator.push(context, MaterialPageRoute(builder: (context)=>ConfirmPinScreen()));
+                //   //widget.pageController.nextPage(duration: _kDuration, curve: _kCurve);
+                // });
               },
               // onTap: () {
               //   print("Pressed");
@@ -98,16 +145,8 @@ class CreatePin extends State<CreatePinScreen>
               },
             ),
           ),
-          const SizedBox(height: 40),
-          DefaultButton(
-              onSubmitted: () {},
-              color: Colors.greenAccent,
-              textColor: Colors.white,
-              text: 'Create'),
         ],
       ),
     );
-   
   }
-
 }
