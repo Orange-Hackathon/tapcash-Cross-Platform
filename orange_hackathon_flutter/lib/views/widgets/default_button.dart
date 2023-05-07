@@ -21,6 +21,7 @@ class DefaultButton extends StatelessWidget {
         onSubmitted();
       },
       style: ElevatedButton.styleFrom(
+        elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius:
               BorderRadius.circular(10.0), // Adjust the radius as needed

@@ -54,7 +54,7 @@ class OnBoarding extends State<OnBoardingScreen> {
     return Scaffold(
         body: Column(
       children: [
-        const SizedBox(height: 60),
+        const SizedBox(height: 80),
         (currentIndex != 0)
             ? Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -123,7 +123,6 @@ class OnBoarding extends State<OnBoardingScreen> {
                 controller: pageController,
                 onPageChanged: onChangedFunction,
                 children: <Widget>[
-     
                   PhoneNumberScreen(
                     pageController: pageController,
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
+import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_text_field.dart';
 import 'package:provider/provider.dart';
@@ -115,6 +116,7 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                               top: 14.4, bottom: 14.4, left: 16),
                           child: TextFormField(
                             keyboardType: TextInputType.phone,
+                            cursorColor: Colors.black,
                             onTap: () {
                               setState(() {
                                 isLabelVisible = false;
@@ -137,12 +139,12 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                 ),
               ),
               const SizedBox(
-                height: 4,
+                height: 8,
               ),
               Row(
                 children: [
                   const SizedBox(
-                    width: 24,
+                    width: 30,
                   ),
                   Text(
                     "Already have an account? ",
@@ -152,14 +154,22 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                         fontFamily: 'poppins',
                         color: HexColor("#939094")),
                   ),
-                  Text(
-                    "Login",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 10,
-                        fontFamily: 'poppins',
-                        color: HexColor("#1A1A1A")),
-                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
+                    },
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          fontFamily: 'poppins',
+                          color: HexColor("#1A1A1A")),
+                    ),
+                  )
                 ],
               ),
               SizedBox(
@@ -174,10 +184,9 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                       width: 312,
                       child: DefaultButton(
                           onSubmitted: () {
-                            print(value
-                                .checkAvailablePhone(phoneController.text));
-                            // widget.pageController
-                            //     .nextPage(duration: _kDuration, curve: _kCurve);
+                            value.checkAvailablePhone(phoneController.text);
+                            widget.pageController
+                                .nextPage(duration: _kDuration, curve: _kCurve);
                           },
                           color: HexColor("#E3E3E4"),
                           textColor: HexColor("#939094"),
