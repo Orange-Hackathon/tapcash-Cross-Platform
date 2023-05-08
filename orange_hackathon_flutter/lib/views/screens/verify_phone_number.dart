@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/constants/constants.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
@@ -88,7 +89,8 @@ class VerifyPhoneNumberScreen extends StatelessWidget {
                 )
               ],
               onCompleted: (v) {
-                value.nextPage(pageController);
+                  pageController.nextPage(
+                            duration: kDuration, curve: kCurve);
               },
               beforeTextPaste: (text) {
                 debugPrint("Allowing to paste $text");

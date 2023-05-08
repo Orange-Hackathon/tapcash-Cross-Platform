@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
@@ -10,6 +11,7 @@ import 'package:provider/provider.dart';
 // ignore: must_be_immutable
 class ForgotPinScreen extends StatelessWidget {
   var emailController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   ForgotPinScreen({super.key});
   
@@ -80,7 +82,9 @@ class ForgotPinScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Padding(
+Form(
+  key:formKey,
+  child: Column(children: [            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Container(
                 height: 48,
@@ -96,6 +100,14 @@ class ForgotPinScreen extends StatelessWidget {
                     cursorColor: Colors.black,
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
+                    validator: (val) {
+                              if (val!.isEmpty) {
+                                return 'Email is required';
+                              } else if (!EmailValidator.validate(val)) {
+                                return 'Invalid email format';
+                              }
+                              return null;
+                            },
                     onTap: () {
                       value.emailForgotPinlabelVisibleUnvisible();
                     },
@@ -122,15 +134,24 @@ class ForgotPinScreen extends StatelessWidget {
                   width: double.infinity,
                   child: DefaultButton(
                       onSubmitted: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>  CreateNewPinScreen()));
+                        if (formKey.currentState!.validate()) {
+                                                  Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CreateNewPinScreen()));
+                                       
+                                      }
+                                      else
+                                      {
+                                        
+                                      }
+
                       },
                       color: HexColor("#333E96"),
                       text: "Send instructions",
                       textColor: HexColor("#F7F7F7")),
-                )),
+                )),],),),
             const SizedBox(
               height: 10,
             ),
