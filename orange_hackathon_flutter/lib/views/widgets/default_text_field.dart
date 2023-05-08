@@ -30,8 +30,6 @@ class DefaultTextFormField extends StatelessWidget
       onTap: ontap,
       validator: validator,
       decoration: InputDecoration(
-        labelStyle: TextStyle(color: Colors.greenAccent),
-        hintStyle: TextStyle(color: Colors.grey),
         //focusColor: Colors.greenAccent,
         prefixIconColor: Colors.greenAccent,
         prefixIcon: (prefix!=null)?Icon(prefix):null,

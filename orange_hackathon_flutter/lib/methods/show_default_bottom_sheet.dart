@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
+
 
 void showDefaultBottomSheet(BuildContext context, String text1,String text2,String buttonText,Function buttonFunc) {
   showModalBottomSheet(
@@ -61,11 +61,9 @@ void showDefaultBottomSheet(BuildContext context, String text1,String text2,Stri
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius:
-              BorderRadius.circular(10.0), // Adjust the radius as needed
+              BorderRadius.circular(10.0), 
         ),
-        primary: HexColor("#333E96"), // Set the background color
-        // Adjust the padding as needed
-        //padding: const EdgeInsets.symmetric(horizontal: 153.5, vertical: 12)
+        primary: HexColor("#333E96"), 
       ),
       child: Text(
         buttonText,

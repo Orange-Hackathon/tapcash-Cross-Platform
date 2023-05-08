@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+
 
 // ignore: must_be_immutable
 class DefaultButton extends StatelessWidget {
@@ -27,8 +27,6 @@ class DefaultButton extends StatelessWidget {
               BorderRadius.circular(10.0), // Adjust the radius as needed
         ),
         primary: color, // Set the background color
-        // Adjust the padding as needed
-        //padding: const EdgeInsets.symmetric(horizontal: 153.5, vertical: 12)
       ),
       child: Text(
         text,

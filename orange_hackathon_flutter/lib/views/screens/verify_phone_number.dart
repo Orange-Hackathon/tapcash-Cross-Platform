@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
+import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:provider/provider.dart';
 
-class VerifyPhoneNumberScreen extends StatefulWidget {
+
+
+// ignore: must_be_immutable
+class VerifyPhoneNumberScreen extends StatelessWidget {
+
   late PageController pageController;
-  VerifyPhoneNumberScreen({super.key, required this.pageController});
-
-  @override
-  State<StatefulWidget> createState() {
-    return VerifyPhoneNumber();
-  }
-}
-
-class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
   TextEditingController textEditingController = TextEditingController();
 
-  bool hasError = false;
-  String currentText = "";
-
-  static const _kDuration = Duration(milliseconds: 300);
-  static const _kCurve = Curves.ease;
+  VerifyPhoneNumberScreen({super.key,required this.pageController});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Consumer<AuthenticationProvider>(builder:(context,value,child)=>SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -48,10 +40,6 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 34.5),
             child: PinCodeTextField(
               onChanged: (value) {
-                debugPrint(value);
-                setState(() {
-                  currentText = value;
-                });
               },
               appContext: context,
               pastedTextStyle: TextStyle(
@@ -71,11 +59,7 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
               blinkWhenObscuring: true,
               animationType: AnimationType.fade,
               validator: (v) {
-                if (v!.length < 5) {
-                  //return "I'm from validator";
-                } else {
-                  return null;
-                }
+               
               },
 
               pinTheme: PinTheme(
@@ -84,13 +68,12 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
                   fieldHeight: 36.5,
                   fieldWidth: 32,
                   activeFillColor: HexColor("#EFEFEF"),
-                  //disabledColor: Colors.amber,
                   inactiveFillColor: HexColor("#EFEFEF"),
                   inactiveColor: HexColor("#EFEFEF"),
                   activeColor: HexColor("#EFEFEF"),
                   selectedColor: Colors.white,
                   selectedFillColor: Colors.white,
-                  fieldOuterPadding: EdgeInsets.all(0)),
+                  fieldOuterPadding: const EdgeInsets.all(0)),
               cursorColor: Colors.black,
               animationDuration: const Duration(milliseconds: 300),
               enableActiveFill: true,
@@ -105,18 +88,10 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
                 )
               ],
               onCompleted: (v) {
-                debugPrint("Completed");
-                widget.pageController
-                    .nextPage(duration: _kDuration, curve: _kCurve);
+                value.nextPage(pageController);
               },
-              // onTap: () {
-              //   print("Pressed");
-              // },
-
               beforeTextPaste: (text) {
                 debugPrint("Allowing to paste $text");
-                //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                //but you can show anything you want here, like your pop up saying wrong paste format or etc
                 return true;
               },
             ),
@@ -134,11 +109,9 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
                       MaterialStateProperty.all<Color>(Colors.transparent),
                   shadowColor:
                       MaterialStateProperty.all<Color>(Colors.transparent),
-                  // You can add other ButtonStyle properties as needed
                 ),
                 onPressed: () {
-                  widget.pageController
-                      .nextPage(duration: _kDuration, curve: _kCurve);
+                  
                 },
                 child: Text(
                   'Resend',
@@ -151,6 +124,6 @@ class VerifyPhoneNumber extends State<VerifyPhoneNumberScreen> {
           )
         ],
       ),
-    );
+    ));
   }
 }

@@ -102,14 +102,11 @@ class CreatePinScreen extends StatelessWidget {
               ],
 
               onCompleted: (v) {
-                debugPrint("Completed");
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => ConfirmPinScreen()));
               },
- 
-
               beforeTextPaste: (text) {
                 debugPrint("Allowing to paste $text");
                 return true;

@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-// ignore: depend_on_referenced_packages
-import 'package:http_parser/http_parser.dart';
 import 'package:orange_hackathon_flutter/constants/constants.dart';
 
-const urlApi = "https://api.redditswe22.tech";
+
+
+
 
 class AuthenticationProvider extends ChangeNotifier {
-  Future checkAvailablePhone(String phoneNumber) async {
-    String request = '/api/available-phone?phoneNumber=';
-    Uri url = Uri.parse(urlApi + request + phoneNumber);
-    final response = await http.get(url);
-
-    return response;
-  }
 
   int onBoardingCurrentIndex = 0;
   bool isPhoneLabelVisible = true;
@@ -24,6 +17,16 @@ class AuthenticationProvider extends ChangeNotifier {
   bool isPinLoginLabelVisible = true;
   bool isEmailForgotPinLabelVisible = true;
 
+
+  Future checkAvailablePhone(String phoneNumber) async {
+    String request = '/api/available-phone?phoneNumber=';
+    Uri url = Uri.parse(urlApi + request + phoneNumber);
+    final response = await http.get(url);
+
+    return response;
+  }
+
+  
   changeOnBoardingCurrentIndex(index) {
     onBoardingCurrentIndex = index;
   }

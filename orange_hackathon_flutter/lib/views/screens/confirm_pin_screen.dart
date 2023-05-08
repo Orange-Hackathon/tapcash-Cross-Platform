@@ -103,8 +103,6 @@ class ConfirmPinScreen extends StatelessWidget {
                 //focusNode: pinCodeFocusNode,
                 autoFocus: true,
                 onChanged: (value) {
-               
-
                 },
                 appContext: context,
                 pastedTextStyle: TextStyle(
@@ -124,11 +122,6 @@ class ConfirmPinScreen extends StatelessWidget {
                 blinkWhenObscuring: true,
                 animationType: AnimationType.fade,
                 validator: (v) {
-                  if (v!.length < 5) {
-                    //return "I'm from validator";
-                  } else {
-                    return null;
-                  }
                 },
                 pinTheme: PinTheme(
                     shape: PinCodeFieldShape.circle,
@@ -145,7 +138,6 @@ class ConfirmPinScreen extends StatelessWidget {
                 cursorColor: HexColor("#CCCCCC"),
                 animationDuration: const Duration(milliseconds: 300),
                 enableActiveFill: true,
-
                 controller: textEditingController,
                 keyboardType: TextInputType.number,
                 boxShadows: const [
@@ -168,7 +160,6 @@ class ConfirmPinScreen extends StatelessWidget {
                 },
                 beforeTextPaste: (text) {
                   debugPrint("Allowing to paste $text");
-
                   return true;
                 },
               ),
