@@ -31,19 +31,13 @@ class _BarChart extends StatelessWidget {
             BarChartRodData rod,
             int rodIndex,
           ) {
-            // return BarTooltipItem(
-            //   rod.toY.round().toString(),
-            //   const TextStyle(
-            //     color: Color(0xFF333E96),
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // );
+            return null;
           },
         ),
       );
 
   Widget getTitles(double value, TitleMeta meta) {
-    final style = TextStyle(
+    const style = TextStyle(
       color: Color(0xff939094),
       fontWeight: FontWeight.w400,
       fontSize: 10,
@@ -100,7 +94,7 @@ class _BarChart extends StatelessWidget {
         show: false,
       );
 
-  LinearGradient get _barsGradient => LinearGradient(
+  LinearGradient get _barsGradient => const LinearGradient(
         colors: [
           Color(0xFF636EC1),
           Color(0xFF333E96),

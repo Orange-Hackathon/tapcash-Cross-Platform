@@ -52,7 +52,7 @@ class PieChart2State extends State {
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const <Widget>[
               Indicator(
@@ -61,7 +61,7 @@ class PieChart2State extends State {
                 isSquare: false,
               ),
               SizedBox(
-                height: 4,
+                height: 16,
               ),
               Indicator(
                 color: Color(0xFFF9DB6D),
@@ -69,7 +69,7 @@ class PieChart2State extends State {
                 isSquare: false,
               ),
               SizedBox(
-                height: 4,
+                height: 16,
               ),
               Indicator(
                 color: Color(0xFF1A1A1A),
@@ -106,54 +106,54 @@ class PieChart2State extends State {
       switch (i) {
         case 0:
           return PieChartSectionData(
-            color: Color(0xff333E96),
+            color: const Color(0xff333E96),
             value: 50 * 85.0 / 100,
             title: '50%',
-            borderSide: BorderSide(),
+            borderSide: const BorderSide(),
             radius: radius * 1.25,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Color(0xFFE3E3E4),
+              color: const Color(0xFFE3E3E4),
               // shadows: shadows,
             ),
           );
         case 1:
           return PieChartSectionData(
-            color: Color(0xFFF9DB6D),
+            color: const Color(0xFFF9DB6D),
             value: 15 * 85.0 / 100,
             title: '15%',
             radius: radius * 1.1,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF1A1A1A),
+              color: const Color(0xFF1A1A1A),
               // shadows: shadows,
             ),
           );
         case 2:
           return PieChartSectionData(
-            color: Color(0xFF1A1A1A),
+            color: const Color(0xFF1A1A1A),
             value: 35 * 85.0 / 100,
             title: '35%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Color(0xFFE3E3E4),
+              color: const Color(0xFFE3E3E4),
               // shadows: shadows,
             ),
           );
         case 3:
           return PieChartSectionData(
-            color: Color(0xFFEFEFEF),
+            color: const Color(0xFFEFEFEF),
             value: 15,
             title: '',
             radius: radius * .8,
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF1A1A1A),
+              color: const Color(0xFF1A1A1A),
               // shadows: shadows,
             ),
           );

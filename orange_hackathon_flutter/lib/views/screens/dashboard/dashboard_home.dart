@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import '../../../models/dashboard/dashboard_home_model.dart';
@@ -165,7 +167,7 @@ class DashboardHome extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: add_icon,
+                        child: addIcon,
                       ),
                     ],
                   ),
