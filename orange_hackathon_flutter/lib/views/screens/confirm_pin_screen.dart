@@ -1,34 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
 import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/personal_info_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/splash_screen.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/indicator.dart';
 
-class ConfirmPinScreen extends StatefulWidget {
-  //late PageController pageController;
+
+
+// ignore: must_be_immutable
+class ConfirmPinScreen extends StatelessWidget {
+  
+  TextEditingController textEditingController = TextEditingController();
+  
   ConfirmPinScreen({super.key});
   @override
-  State<StatefulWidget> createState() {
-    return ConfirmPin();
-  }
-}
-
-class ConfirmPin extends State<ConfirmPinScreen> {
-  TextEditingController textEditingController = TextEditingController();
-  //FocusNode pinCodeFocusNode = FocusNode();
-  static const _kDuration = Duration(milliseconds: 300);
-  static const _kCurve = Curves.ease;
-
-  bool hasError = false;
-  String currentText = "";
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Consumer<AuthenticationProvider>(builder:(context,value,child)=>Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -108,15 +98,13 @@ class ConfirmPin extends State<ConfirmPinScreen> {
             ),
             Container(
               margin: EdgeInsets.zero,
-              padding: EdgeInsets.symmetric(horizontal: 120),
+              padding: const EdgeInsets.symmetric(horizontal: 120),
               child: PinCodeTextField(
                 //focusNode: pinCodeFocusNode,
                 autoFocus: true,
                 onChanged: (value) {
-                  debugPrint(value);
-                  setState(() {
-                    currentText = value;
-                  });
+               
+
                 },
                 appContext: context,
                 pastedTextStyle: TextStyle(
@@ -153,7 +141,7 @@ class ConfirmPin extends State<ConfirmPinScreen> {
                     activeColor: HexColor("#333E96"),
                     selectedColor: HexColor("#CCCCCC"),
                     selectedFillColor: HexColor("#CCCCCC"),
-                    fieldOuterPadding: EdgeInsets.all(0)),
+                    fieldOuterPadding: const EdgeInsets.all(0)),
                 cursorColor: HexColor("#CCCCCC"),
                 animationDuration: const Duration(milliseconds: 300),
                 enableActiveFill: true,
@@ -169,7 +157,6 @@ class ConfirmPin extends State<ConfirmPinScreen> {
                 ],
                 onCompleted: (v) {
                   debugPrint("Completed");
-                  //pinCodeFocusNode.unfocus();
                   showDefaultBottomSheet(
                       context,
                       'Your account has been created successfully',
@@ -179,14 +166,9 @@ class ConfirmPin extends State<ConfirmPinScreen> {
                         MaterialPageRoute(builder: (context) => LoginScreen()));
                   });
                 },
-                // onTap: () {
-                //   print("Pressed");
-                // },
-
                 beforeTextPaste: (text) {
                   debugPrint("Allowing to paste $text");
-                  //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                  //but you can show anything you want here, like your pop up saying wrong paste format or etc
+
                   return true;
                 },
               ),
@@ -194,6 +176,6 @@ class ConfirmPin extends State<ConfirmPinScreen> {
           ],
         ),
       ),
-    );
+    ));
   }
 }

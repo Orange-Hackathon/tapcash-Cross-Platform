@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
 import 'package:orange_hackathon_flutter/views/screens/confirm_pin_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/personal_info_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/splash_screen.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class CreatePinScreen extends StatefulWidget {
-  late PageController pageController;
-  CreatePinScreen({super.key, required this.pageController});
-  @override
-  State<StatefulWidget> createState() {
-    return CreatePin();
-  }
-}
 
-class CreatePin extends State<CreatePinScreen> {
+
+// ignore: must_be_immutable
+class CreatePinScreen extends StatelessWidget {
+
+  late PageController pageController;
   TextEditingController textEditingController = TextEditingController();
   FocusNode pinCodeFocusNode = FocusNode();
-  static const _kDuration = Duration(milliseconds: 300);
-  static const _kCurve = Curves.ease;
 
-  bool hasError = false;
-  String currentText = "";
+
+  CreatePinScreen({super.key,required this.pageController});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -56,15 +45,12 @@ class CreatePin extends State<CreatePinScreen> {
           ),
           Container(
             margin: EdgeInsets.zero,
-            padding: EdgeInsets.symmetric(horizontal: 120),
+            padding: const EdgeInsets.symmetric(horizontal: 120),
             child: PinCodeTextField(
               focusNode: pinCodeFocusNode,
               autoFocus: true,
               onChanged: (value) {
                 debugPrint(value);
-                setState(() {
-                  currentText = value;
-                });
               },
               appContext: context,
               pastedTextStyle: TextStyle(
@@ -100,7 +86,7 @@ class CreatePin extends State<CreatePinScreen> {
                   activeColor: HexColor("#333E96"),
                   selectedColor: HexColor("#CCCCCC"),
                   selectedFillColor: HexColor("#CCCCCC"),
-                  fieldOuterPadding: EdgeInsets.all(0)),
+                  fieldOuterPadding: const EdgeInsets.all(0)),
               cursorColor: HexColor("#CCCCCC"),
               animationDuration: const Duration(milliseconds: 300),
               enableActiveFill: true,
@@ -121,26 +107,11 @@ class CreatePin extends State<CreatePinScreen> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => ConfirmPinScreen()));
-                // pinCodeFocusNode.dispose();
-                // pinCodeFocusNode=FocusNode();
-
-                // showDefaultBottomSheet(
-                //     context,
-                //     'Your account has been created successfully',
-                //     '',
-                //     'Login', () {
-                //       Navigator.push(context, MaterialPageRoute(builder: (context)=>ConfirmPinScreen()));
-                //   //widget.pageController.nextPage(duration: _kDuration, curve: _kCurve);
-                // });
               },
-              // onTap: () {
-              //   print("Pressed");
-              // },
+ 
 
               beforeTextPaste: (text) {
                 debugPrint("Allowing to paste $text");
-                //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                //but you can show anything you want here, like your pop up saying wrong paste format or etc
                 return true;
               },
             ),

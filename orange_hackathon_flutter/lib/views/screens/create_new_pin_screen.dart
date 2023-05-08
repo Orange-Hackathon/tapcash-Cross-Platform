@@ -1,34 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/views/screens/forgot_pin_screen.dart';
 import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/on_boarding_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_text_field.dart';
+
 
 // ignore: must_be_immutable
-class CreateNewPinScreen extends StatefulWidget {
-  const CreateNewPinScreen({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return CreateNewPin();
-  }
-}
-
-class CreateNewPin extends State<CreateNewPinScreen> {
+class CreateNewPinScreen extends StatelessWidget {
   var pin1Controller = TextEditingController();
   var pin2Controller = TextEditingController();
-  bool isLabelVisible1 = true;
-  bool isLabelVisible2 = true;
+
+  CreateNewPinScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
-    final double screenWidth = size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -164,7 +152,7 @@ class CreateNewPin extends State<CreateNewPinScreen> {
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,
                 ),
-                child: Container(
+                child: SizedBox(
                   height: 48,
                   width: double.infinity,
                   child: DefaultButton(

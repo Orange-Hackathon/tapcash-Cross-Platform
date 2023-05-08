@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/views/screens/create_new_pin_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/on_boarding_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
+import 'package:provider/provider.dart';
+
+
 
 // ignore: must_be_immutable
-class ForgotPinScreen extends StatefulWidget {
-  const ForgotPinScreen({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return ForgotPin();
-  }
-}
-
-class ForgotPin extends State<ForgotPinScreen> {
+class ForgotPinScreen extends StatelessWidget {
   var emailController = TextEditingController();
-  bool isLabelVisible = true;
+
+  ForgotPinScreen({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
-    final double screenWidth = size.width;
-    return Scaffold(
+  
+    return Consumer<AuthenticationProvider>(builder:(context,value,child)=>Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -85,7 +81,7 @@ class ForgotPin extends State<ForgotPinScreen> {
               height: 16,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Container(
                 height: 48,
                 width: double.infinity,
@@ -101,14 +97,12 @@ class ForgotPin extends State<ForgotPinScreen> {
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     onTap: () {
-                      setState(() {
-                        isLabelVisible = false;
-                      });
+                      value.emailForgotPinlabelVisibleUnvisible();
                     },
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         labelText:
-                            isLabelVisible ? 'Youremaail@gmail.com' : null,
+                            value.isEmailForgotPinLabelVisible ? 'Youremaail@gmail.com' : null,
                         labelStyle: TextStyle(
                             fontFamily: 'poppins',
                             fontSize: 12,
@@ -123,7 +117,7 @@ class ForgotPin extends State<ForgotPinScreen> {
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,
                 ),
-                child: Container(
+                child: SizedBox(
                   height: 48,
                   width: double.infinity,
                   child: DefaultButton(
@@ -131,7 +125,7 @@ class ForgotPin extends State<ForgotPinScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => CreateNewPinScreen()));
+                                builder: (context) =>  CreateNewPinScreen()));
                       },
                       color: HexColor("#333E96"),
                       text: "Send instructions",
@@ -143,6 +137,6 @@ class ForgotPin extends State<ForgotPinScreen> {
           ],
         ),
       ),
-    );
+    ));
   }
 }

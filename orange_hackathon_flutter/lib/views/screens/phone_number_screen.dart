@@ -3,33 +3,26 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_text_field.dart';
 import 'package:provider/provider.dart';
 
-class PhoneNumberScreen extends StatefulWidget {
-  late PageController pageController;
-  PhoneNumberScreen({super.key, required this.pageController});
 
-  @override
-  State<StatefulWidget> createState() {
-    return PhoneNumber();
-  }
-}
 
 // ignore: must_be_immutable
-class PhoneNumber extends State<PhoneNumberScreen> {
-  var phoneController = TextEditingController();
-  bool isLabelVisible = true;
+class PhoneNumberScreen extends StatelessWidget {
 
-  static const _kDuration = Duration(milliseconds: 300);
-  static const _kCurve = Curves.ease;
+  late PageController pageController;
+  var phoneController = TextEditingController();
+  
+
+  PhoneNumberScreen({super.key, required this.pageController});
+  
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
-    final double screenWidth = size.width;
-    return SingleChildScrollView(
+
+    return Consumer<AuthenticationProvider>(builder: (context,value,child)=>SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SizedBox(
           height: screenHeight * 0.85,
@@ -118,14 +111,12 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                             keyboardType: TextInputType.phone,
                             cursorColor: Colors.black,
                             onTap: () {
-                              setState(() {
-                                isLabelVisible = false;
-                              });
+                              value.phonelabelVisibleUnvisible();
                             },
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 labelText:
-                                    isLabelVisible ? 'Phone number' : null,
+                                    value.isPhoneLabelVisible ? 'Phone number' : null,
                                 labelStyle: TextStyle(
                                     fontFamily: 'poppins',
                                     fontSize: 12,
@@ -173,10 +164,10 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                 ],
               ),
               SizedBox(
-                height: 0.48 * screenHeight,
+                height: 0.45 * screenHeight,
+                //height: 0.48 * screenHeight,
               ),
-              Consumer<AuthenticationProvider>(
-                builder: (context, value, child) => Padding(
+              Padding(
                     padding:
                         const EdgeInsets.only(left: 24, right: 24, bottom: 0),
                     child: SizedBox(
@@ -185,16 +176,14 @@ class PhoneNumber extends State<PhoneNumberScreen> {
                       child: DefaultButton(
                           onSubmitted: () {
                             value.checkAvailablePhone(phoneController.text);
-                            widget.pageController
-                                .nextPage(duration: _kDuration, curve: _kCurve);
+                            value.nextPage(pageController);
                           },
                           color: HexColor("#E3E3E4"),
                           textColor: HexColor("#939094"),
                           text: "Sign up"),
                     )),
-              )
             ],
           ),
-        ));
+        )),);
   }
 }
