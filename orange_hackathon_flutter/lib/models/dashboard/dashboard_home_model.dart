@@ -159,6 +159,16 @@ final Widget returnArrowIcon = Image.asset(
   height: 24,
   width: 24,
 );
+final Widget tapWhite = Image.asset(
+  "assets/images/dashboard/white_tap.png",
+  height: 27,
+  width: 56,
+);
+final Widget visa = Image.asset(
+  "assets/images/dashboard/visa.png",
+  height: 30,
+  width: 77,
+);
 
 const Gradient qrGradient = LinearGradient(
   begin: Alignment.topCenter,
@@ -166,6 +176,16 @@ const Gradient qrGradient = LinearGradient(
   colors: [
     Color(0xFF636EC1),
     Color(0xFF333E96),
+  ],
+);
+const Gradient cardGradient = LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [
+    Color(0xFF1A1A1A),
+    Color(0xFF333E96),
+    Color(0xFF333E96),
+    Color(0xFF1A1A1A),
   ],
 );
 //icons

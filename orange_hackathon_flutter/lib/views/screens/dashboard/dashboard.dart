@@ -4,9 +4,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:orange_hackathon_flutter/models/dashboard/dashboard_home_model.dart';
-import 'package:orange_hackathon_flutter/views/screens/dashboard/user_profile.dart';
+import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard_user_profile.dart';
 
 // import '../../widgets/dashboard_insights.dart';
+import 'dashboard_card.dart';
 import 'dashboard_home.dart';
 import 'dashboard_insights.dart';
 // import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard_home.dart';
@@ -25,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
     DashboardHome(),
     DashboardInsights(),
     Text('Scan transaction'),
-    Text('Cards Page'),
+    DashboardCard(),
     UserProfile(),
   ];
 

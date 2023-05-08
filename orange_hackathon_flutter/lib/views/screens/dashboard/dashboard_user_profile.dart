@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/dashboard/dashboard_home_model.dart';
+import '../../widgets/dashboard_text.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -38,8 +39,8 @@ class UserProfile extends StatelessWidget {
           const SizedBox(
             height: 7,
           ),
-          Center(
-            child: const Text(
+          const Center(
+            child: Text(
               "Mamdouh",
               style: TextStyle(
                 color: Color(0xFF1A1A1A),
@@ -56,7 +57,7 @@ class UserProfile extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.only(left: 28),
-                child: Text(
+                child: const Text(
                   "Mamdouh Ahmed",
                   style: TextStyle(
                     color: Color(0xFF333E96),
@@ -80,12 +81,12 @@ class UserProfile extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Container(
             padding: const EdgeInsets.only(left: 28),
-            child: Text(
+            child: const Text(
               "mamdouhattia31@gmail.com",
               style: TextStyle(
                 color: Color(0xFF1A1A1A),
@@ -94,12 +95,12 @@ class UserProfile extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Container(
             padding: const EdgeInsets.only(left: 28),
-            child: Text(
+            child: const Text(
               "+201275400234",
               style: TextStyle(
                 color: Color(0xFF1A1A1A),
@@ -108,7 +109,7 @@ class UserProfile extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           //line
@@ -117,11 +118,11 @@ class UserProfile extends StatelessWidget {
             height: 1,
             color: const Color(0xFFCCCCCC),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           GreyLabel(text: "Security"),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           //a row of 4 solid circles black coloured
@@ -131,9 +132,9 @@ class UserProfile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 for (int i = 0; i < 4; i++)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: const CircleAvatar(
+                  const Padding(
+                    padding: EdgeInsets.only(right: 8),
+                    child: CircleAvatar(
                       radius: 4,
                       backgroundColor: Color(0xff1A1A1A),
                     ),
@@ -141,18 +142,18 @@ class UserProfile extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           GreyLabel(text: "Help & Support"),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 28),
             child: InkWell(
               onTap: () {},
-              child: Text(
+              child: const Text(
                 "Chat Support",
                 style: TextStyle(
                   color: Color(0xFF333E96),
@@ -162,50 +163,7 @@ class UserProfile extends StatelessWidget {
               ),
             ),
           ),
-          // TextButton(
-          //   style: ButtonStyle(
-          //     alignment: Alignment.centerLeft,
-          //     visualDensity: VisualDensity.compact,
-          //     fixedSize: MaterialStateProperty.all(const Size(80, 16)),
-          //   ),
-          //   onPressed: () {},
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(left: 29),
-          //     child: const Text(
-          //       "Chat Support",
-          //       style: TextStyle(
-          //         color: Color(0xFF333E96),
-          //         fontWeight: FontWeight.w400,
-          //         fontSize: 12,
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ],
-      ),
-    );
-  }
-}
-
-class GreyLabel extends StatelessWidget {
-  String? text = "";
-  GreyLabel({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.centerLeft,
-      padding: const EdgeInsets.only(left: 28),
-      child: Text(
-        text!,
-        style: TextStyle(
-          color: Color(0xFF939094),
-          fontWeight: FontWeight.w400,
-          fontSize: 12,
-        ),
       ),
     );
   }
