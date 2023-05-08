@@ -16,7 +16,7 @@ class VerifyPhoneNumberScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthenticationProvider>(builder:(context,value,child)=>SingleChildScrollView(
+    return Consumer<AuthenticationUIProvider>(builder:(context,value,child)=>SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

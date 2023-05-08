@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
     final double screenWidth = size.width;
-    return Consumer<AuthenticationProvider>(
+    return Consumer<AuthenticationUIProvider>(
         builder: (context, value, child) => Scaffold(
               body: SingleChildScrollView(
                 child: Column(
@@ -176,7 +176,7 @@ class LoginScreen extends StatelessWidget {
                           height: 48,
                           width: double.infinity,
                           child: DefaultButton(
-                              onSubmitted: () {
+                              onSubmitted: () async{
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(

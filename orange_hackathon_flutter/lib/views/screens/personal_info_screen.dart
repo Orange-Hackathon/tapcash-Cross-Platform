@@ -18,7 +18,7 @@ class PersonalInfoScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
 
-    return Consumer<AuthenticationProvider>(
+    return Consumer<AuthenticationUIProvider>(
         builder: (context, value, child) => SingleChildScrollView(
                 child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),

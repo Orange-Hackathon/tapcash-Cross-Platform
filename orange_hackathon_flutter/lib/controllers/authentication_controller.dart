@@ -3,10 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:orange_hackathon_flutter/constants/constants.dart';
 
 
-
-
-
-class AuthenticationProvider extends ChangeNotifier {
+class AuthenticationUIProvider extends ChangeNotifier {
 
   int onBoardingCurrentIndex = 0;
   bool isPhoneLabelVisible = true;
@@ -17,14 +14,11 @@ class AuthenticationProvider extends ChangeNotifier {
   bool isPinLoginLabelVisible = true;
   bool isEmailForgotPinLabelVisible = true;
 
+  String pin='';
+  String pinToConfirm='';
 
-  Future checkAvailablePhone(String phoneNumber) async {
-    String request = '/api/available-phone?phoneNumber=';
-    Uri url = Uri.parse(urlApi + request + phoneNumber);
-    final response = await http.get(url);
 
-    return response;
-  }
+ 
 
   
   changeOnBoardingCurrentIndex(index) {
@@ -72,5 +66,30 @@ class AuthenticationProvider extends ChangeNotifier {
   emailForgotPinlabelVisibleUnvisible() {
     isEmailForgotPinLabelVisible = false;
     notifyListeners();
+  }
+
+  setPin(String v)
+  {
+    pin=v;
+    notifyListeners();
+  }
+
+  setPinToConfirm(String v)
+  {
+    pinToConfirm=v;
+    notifyListeners();
+  }
+
+  confirmPin(pin,pinToConfirm)
+  {
+    if(pin==pinToConfirm)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+    
   }
 }

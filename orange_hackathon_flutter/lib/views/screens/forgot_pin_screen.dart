@@ -19,7 +19,7 @@ class ForgotPinScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
   
-    return Consumer<AuthenticationProvider>(builder:(context,value,child)=>Scaffold(
+    return Consumer<AuthenticationUIProvider>(builder:(context,value,child)=>Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

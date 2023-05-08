@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
+import 'package:orange_hackathon_flutter/services/authentication_services.dart';
 import 'package:orange_hackathon_flutter/views/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
     ));
 
     return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (context)=>AuthenticationProvider())
+      ChangeNotifierProvider(create: (context)=>AuthenticationUIProvider(),
+      ),
+      ChangeNotifierProvider(create: (context)=>AuthenticationServices())
     ],child: MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Orange',

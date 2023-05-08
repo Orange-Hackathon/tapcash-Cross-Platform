@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
+import 'package:orange_hackathon_flutter/services/authentication_services.dart';
 import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ class PhoneNumberScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double screenHeight = size.height;
 
-    return Consumer<AuthenticationProvider>(builder: (context,value,child)=>SingleChildScrollView(
+    return Consumer2<AuthenticationUIProvider,AuthenticationServices>(builder: (context,value,value2,child)=>SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SizedBox(
           height: screenHeight * 0.85,
@@ -174,8 +175,10 @@ class PhoneNumberScreen extends StatelessWidget {
                       height: 48,
                       width: 312,
                       child: DefaultButton(
-                          onSubmitted: () {
-                            value.checkAvailablePhone(phoneController.text);
+                          onSubmitted: () async{
+                            value2.checkAvailablePhone(phoneController.text);
+                            // print(value2
+                            //     .checkAvailablePhone(phoneController.text));
                             value.nextPage(pageController);
                           },
                           color: HexColor("#E3E3E4"),

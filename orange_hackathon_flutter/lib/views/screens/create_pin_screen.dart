@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/views/screens/confirm_pin_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -16,7 +18,7 @@ class CreatePinScreen extends StatelessWidget {
   CreatePinScreen({super.key,required this.pageController});
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Consumer<AuthenticationUIProvider>(builder: (context,value,child)=>SingleChildScrollView(
       child: Column(
         children: [
           const SizedBox(
@@ -70,8 +72,11 @@ class CreatePinScreen extends StatelessWidget {
               blinkWhenObscuring: true,
               animationType: AnimationType.fade,
               validator: (v) {
-                if (v!.length < 5) {
+                if (v!.length < 4) {
+                  
+                  //return 'Please enter 4 characters';
                 } else {
+                 
                   return null;
                 }
               },
@@ -102,6 +107,7 @@ class CreatePinScreen extends StatelessWidget {
               ],
 
               onCompleted: (v) {
+                 value.setPin(v);
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -115,6 +121,6 @@ class CreatePinScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 }

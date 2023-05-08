@@ -18,7 +18,7 @@ class ConfirmPinScreen extends StatelessWidget {
   ConfirmPinScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthenticationProvider>(builder:(context,value,child)=>Scaffold(
+    return Consumer<AuthenticationUIProvider>(builder:(context,value,child)=>Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -122,6 +122,17 @@ class ConfirmPinScreen extends StatelessWidget {
                 blinkWhenObscuring: true,
                 animationType: AnimationType.fade,
                 validator: (v) {
+                   if (v!.length < 4) {
+                            //return 'Please enter 4 characters';
+                          } else {
+                            if(!value.confirmPin(value.pin, value.pinToConfirm))
+                            {
+                              return 'Try again';
+                            }
+ 
+
+                          }
+                  
                 },
                 pinTheme: PinTheme(
                     shape: PinCodeFieldShape.circle,
@@ -148,15 +159,26 @@ class ConfirmPinScreen extends StatelessWidget {
                   )
                 ],
                 onCompleted: (v) {
-                  debugPrint("Completed");
-                  showDefaultBottomSheet(
-                      context,
-                      'Your account has been created successfully',
-                      '',
-                      'Login', () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
-                  });
+                  value.setPinToConfirm(v);
+                  if(value.pin==value.pinToConfirm)
+                  {
+                    showDefaultBottomSheet(
+                                context,
+                                'Your account has been created successfully',
+                                '',
+                                'Login', () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
+                            });
+
+                  }
+                  // else
+                  // {
+
+
+                  // }            
                 },
                 beforeTextPaste: (text) {
                   debugPrint("Allowing to paste $text");

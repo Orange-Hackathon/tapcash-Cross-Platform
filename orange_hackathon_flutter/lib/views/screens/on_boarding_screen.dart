@@ -16,7 +16,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthenticationProvider>(
+    return Consumer<AuthenticationUIProvider>(
         builder: (context, value, child) => Scaffold(
                 body: Column(
               children: [
