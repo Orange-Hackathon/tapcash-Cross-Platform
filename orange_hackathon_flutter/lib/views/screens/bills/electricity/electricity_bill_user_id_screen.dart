@@ -42,7 +42,7 @@ class ElectricityBillUserIDScreen extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
                 Container(
                   height: 48,
                   width: double.infinity,
@@ -71,27 +71,25 @@ class ElectricityBillUserIDScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 48),
-                Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                    ),
-                    child: SizedBox(
-                      height: 48,
-                      width: double.infinity,
-                      child: DefaultButton(
-                          onSubmitted: () {
-                            if (formKey.currentState!.validate()) {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          ElectricityBillsAmountScreen()));
-                            }
-                          },
-                          color: HexColor("#333E96"),
-                          text: "Continue",
-                          textColor: HexColor("#F7F7F7")),
-                    )),
+                SizedBox(
+                  height: 48,
+                  width: double.infinity,
+                  child: DefaultButton(
+                      onSubmitted: () {
+                        if (formKey.currentState!.validate()) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ElectricityBillsAmountScreen(
+                                        companyName: companyName,
+                                      )));
+                        }
+                      },
+                      color: HexColor("#333E96"),
+                      text: "Continue",
+                      textColor: HexColor("#F7F7F7")),
+                )
               ],
             ),
           )),
