@@ -137,7 +137,7 @@ class PersonalInfoScreen extends StatelessWidget {
                           validator: (val) {
                             if (val!.isEmpty) {
                               return 'Please enter your email';
-                            } else if (!EmailValidator.validate(val!)) {
+                            } else if (!EmailValidator.validate(val)) {
                               return 'Invalid email format';
                             }
                           },

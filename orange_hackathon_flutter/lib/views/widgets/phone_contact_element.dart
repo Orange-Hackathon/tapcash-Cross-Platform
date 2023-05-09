@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/methods/show_search_contacts_bottom_sheet.dart';
 
 class PhoneContactElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return InkWell(
+      onTap: (){
+        showPhoneContactsSheet(context);
+      },
+      child: Row(
       children: [
         const CircleAvatar(
           radius: 16,
@@ -43,6 +48,7 @@ class PhoneContactElement extends StatelessWidget {
           ],
         )
       ],
+    ),
     );
   }
 }
