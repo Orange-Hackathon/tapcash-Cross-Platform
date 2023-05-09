@@ -106,19 +106,15 @@ class PhoneNumberScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 top: 14.4, bottom: 14.4, left: 16),
                             child: TextFormField(
+                              controller: phoneController,
                               maxLength: 10,
                               keyboardType: TextInputType.phone,
                               cursorColor: Colors.black,
-                              onTap: () {
-                                value.phonelabelVisibleUnvisible();
-                              },
                               decoration: InputDecoration(
                                   counterText: '',
                                   border: InputBorder.none,
-                                  labelText: value.isPhoneLabelVisible
-                                      ? 'Phone number'
-                                      : null,
-                                  labelStyle: TextStyle(
+                                  hintText: 'Phone number',
+                                  hintStyle: TextStyle(
                                       fontFamily: 'poppins',
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
@@ -176,11 +172,13 @@ class PhoneNumberScreen extends StatelessWidget {
                       width: 312,
                       child: DefaultButton(
                           onSubmitted: () async {
-                            value2.checkAvailablePhone(phoneController.text);
-                            // print(value2
-                            //     .checkAvailablePhone(phoneController.text));
-                            pageController.nextPage(
-                                duration: kDuration, curve: kCurve);
+                            bool isPhoneAvailable = await value2
+                                .checkAvailablePhone(phoneController.text);
+
+                            if (isPhoneAvailable) {
+                              pageController.nextPage(
+                                  duration: kDuration, curve: kCurve);
+                            }
                           },
                           color: HexColor("#E3E3E4"),
                           textColor: HexColor("#939094"),
