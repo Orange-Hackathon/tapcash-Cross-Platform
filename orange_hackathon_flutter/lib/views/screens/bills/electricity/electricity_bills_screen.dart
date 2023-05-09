@@ -37,18 +37,26 @@ class ElectricityBillsScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 30),
                 Container(
-                  height: 48,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.0),
-                    color: HexColor("#EFEFEF"),
-                  ),
-                  child: TextFormField(
-                    
-                    cursorColor: Colors.transparent,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                        suffix: IconButton(
+                    height: 48,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18.0),
+                      color: HexColor("#EFEFEF"),
+                    ),
+                    child: Row(
+                      children: [
+                        const SizedBox(
+                          width: 24,
+                        ),
+                        Text('Choose your provider',
+                            style: TextStyle(
+                              fontFamily: 'poppins',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: HexColor("#939094"),
+                            )),
+                        const Spacer(),
+                        IconButton(
                           splashRadius: 1,
                           onPressed: () {
                             value.showUnShowElectricityCompanies();
@@ -58,17 +66,8 @@ class ElectricityBillsScreen extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 10.4, horizontal: 16),
-                        border: InputBorder.none,
-                        hintText: 'Choose your provider',
-                        hintStyle: TextStyle(
-                            fontFamily: 'poppins',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: HexColor("#939094"))),
-                  ),
-                ),
+                      ],
+                    )),
                 const SizedBox(height: 8),
                 (value.isElectricityCompaniesShown)
                     ? Container(
