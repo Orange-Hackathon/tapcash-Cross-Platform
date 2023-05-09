@@ -2,7 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
-import 'package:orange_hackathon_flutter/views/screens/create_new_pin_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/create_new_pin_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:provider/provider.dart';
 

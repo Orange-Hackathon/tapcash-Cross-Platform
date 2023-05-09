@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/login_screen.dart';
+import 'package:orange_hackathon_flutter/views/widgets/indicator.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/indicator.dart';
 
 
 

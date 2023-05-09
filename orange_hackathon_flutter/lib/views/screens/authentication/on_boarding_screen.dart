@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orange_hackathon_flutter/views/screens/confirm_pin_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/create_pin_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/personal_info_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/phone_number_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/verify_phone_number.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/create_pin_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/personal_info_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/phone_number_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/verify_phone_number.dart';
 import 'package:orange_hackathon_flutter/views/widgets/indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {

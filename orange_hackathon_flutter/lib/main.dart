@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/services/authentication_services.dart';
-import 'package:orange_hackathon_flutter/views/screens/splash_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,18 +19,22 @@ class MyApp extends StatelessWidget {
       statusBarColor: Colors.white, // Change this to your desired color
     ));
 
-    return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (context)=>AuthenticationUIProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => AuthenticationUIProvider(),
+        ),
+        ChangeNotifierProvider(create: (context) => AuthenticationServices())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Orange',
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          primarySwatch: Colors.blue,
+        ),
+        home: const SplashScreen(),
       ),
-      ChangeNotifierProvider(create: (context)=>AuthenticationServices())
-    ],child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Orange',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primarySwatch: Colors.blue,
-      ),
-      home: const SplashScreen(),
-    ),);
+    );
   }
 }

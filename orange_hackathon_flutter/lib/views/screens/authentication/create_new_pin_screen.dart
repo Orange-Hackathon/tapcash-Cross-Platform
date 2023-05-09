@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/login_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 
 // ignore: must_be_immutable

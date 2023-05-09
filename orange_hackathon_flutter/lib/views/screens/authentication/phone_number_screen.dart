@@ -3,9 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/constants/constants.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
-import 'package:orange_hackathon_flutter/methods/show_snack_bar.dart';
 import 'package:orange_hackathon_flutter/services/authentication_services.dart';
-import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/login_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:provider/provider.dart';
 
