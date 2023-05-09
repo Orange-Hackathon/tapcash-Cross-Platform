@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 class LoginScreen extends StatelessWidget {
   var phoneController = TextEditingController();
   var pinController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   LoginScreen({super.key});
 
@@ -21,6 +22,8 @@ class LoginScreen extends StatelessWidget {
     return Consumer<AuthenticationUIProvider>(
         builder: (context, value, child) => Scaffold(
               body: SingleChildScrollView(
+                  child: Form(
+                key: formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -62,27 +65,36 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8.0),
                           color: HexColor("#EFEFEF"),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 14.4, bottom: 14.4, left: 16),
-                          child: TextFormField(
-                            cursorColor: Colors.black,
-                            controller: phoneController,
-                            keyboardType: TextInputType.phone,
-                            onTap: () {
-                              value.phoneLoginlabelVisibleUnvisible();
-                            },
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                labelText: value.isPhoneLoginLabelVisible
-                                    ? 'Phone number'
-                                    : null,
-                                labelStyle: TextStyle(
-                                    fontFamily: 'poppins',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: HexColor("#939094"))),
-                          ),
+                        child: TextFormField(
+                          maxLength: 11,
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return 'Please enter your phone number';
+                            } else if (val.length < 11) {
+                              return 'Your number must not be less than 11 digits';
+                            } else {
+                              return null;
+                            }
+                          },
+                          cursorColor: Colors.black,
+                          controller: phoneController,
+                          keyboardType: TextInputType.phone,
+                          decoration: InputDecoration(
+                              counterText: '',
+                              errorStyle: const TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.red),
+                              contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 10.4, horizontal: 16),
+                              border: InputBorder.none,
+                              hintText: 'Phone number',
+                              hintStyle: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: HexColor("#939094"))),
                         ),
                       ),
                     ),
@@ -98,26 +110,36 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8.0),
                           color: HexColor("#EFEFEF"),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 14.4, bottom: 14.4, left: 16),
-                          child: TextFormField(
-                            cursorColor: Colors.black,
-                            controller: pinController,
-                            keyboardType: TextInputType.number,
-                            onTap: () {
-                              value.pinLoginlabelVisibleUnvisible();
-                            },
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                labelText:
-                                    value.isPinLoginLabelVisible ? 'PIN' : null,
-                                labelStyle: TextStyle(
-                                    fontFamily: 'poppins',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: HexColor("#939094"))),
-                          ),
+                        child: TextFormField(
+                          maxLength: 4,
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return 'Please enter your PIN';
+                            } else if (val.length != 4) {
+                              return 'Your PIN must be 4 digits';
+                            } else {
+                              return null;
+                            }
+                          },
+                          cursorColor: Colors.black,
+                          controller: pinController,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              counterText: '',
+                              errorStyle: const TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.red),
+                              contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 10.4, horizontal: 16),
+                              border: InputBorder.none,
+                              hintText: 'PIN',
+                              hintStyle: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: HexColor("#939094"))),
                         ),
                       ),
                     ),
@@ -137,8 +159,7 @@ class LoginScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                         ForgotPinScreen()));
+                                    builder: (context) => ForgotPinScreen()));
                           },
                           child: Text(
                             'Forgot your PIN?',
@@ -160,7 +181,15 @@ class LoginScreen extends StatelessWidget {
                           height: 48,
                           width: double.infinity,
                           child: DefaultButton(
-                              onSubmitted: () {},
+                              onSubmitted: () {
+                                if (formKey.currentState!.validate()) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              OnBoardingScreen()));
+                                }
+                              },
                               color: HexColor("#333E96"),
                               text: "Login",
                               textColor: HexColor("#F7F7F7")),
@@ -176,7 +205,7 @@ class LoginScreen extends StatelessWidget {
                           height: 48,
                           width: double.infinity,
                           child: DefaultButton(
-                              onSubmitted: () async{
+                              onSubmitted: () async {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -189,7 +218,7 @@ class LoginScreen extends StatelessWidget {
                         )),
                   ],
                 ),
-              ),
+              )),
             ));
   }
 }

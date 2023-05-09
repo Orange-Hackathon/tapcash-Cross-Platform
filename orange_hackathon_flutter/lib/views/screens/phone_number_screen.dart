@@ -116,11 +116,12 @@ class PhoneNumberScreen extends StatelessWidget {
                                   if (val!.isEmpty) {
                                     return 'Please enter your phone number';
                                   } else if (val.length < 11) {
-                                    return 'Your number must not be less than 11 digit';
+                                    return 'Your number must not be less than 11 digits';
                                   } else {
                                     return null;
                                   }
                                 },
+                                
                                 controller: phoneController,
                                 maxLength: 11,
                                 keyboardType: TextInputType.phone,
