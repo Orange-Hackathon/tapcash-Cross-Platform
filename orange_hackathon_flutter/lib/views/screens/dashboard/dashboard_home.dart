@@ -1,8 +1,12 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:orange_hackathon_flutter/views/widgets/dashboard/dashboard_text.dart';
 
+import '../../../methods/dashboard/dashboard_methods.dart';
 import '../../../models/dashboard/dashboard_home_model.dart';
+import '../../../models/dashboard/recent_transactions_model.dart';
+import '../../widgets/dashboard/transactions_list.dart';
 
 class DashboardHome extends StatelessWidget {
   const DashboardHome({super.key});
@@ -10,242 +14,238 @@ class DashboardHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final transactionLists = getTransactionLists(transactions);
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Home"),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () {},
-            ),
-          ],
-        ),
         body: ListView(
-          children: [
-            //surronded by a beautiful box with border only and a shadow but no color
-            const BalanceBox(),
-
-            //a title "Services" with 3 buttons under it padded and equally spaces
-            //the buttons are clickable and have a title and an icon
-            //the buttons are surrounded by a box with border and a shadow and has a color
-            Container(
-              margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                // border: Border.all(
-                //   color: Colors.grey,
-                //   width: 1,
-                // ),
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.white,
-                    blurRadius: 10,
-                    offset: Offset(0, 5),
+      children: [
+        const BalanceBox(),
+        SizedBox(
+          height: 16,
+        ),
+        Container(
+          // margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
+          padding: const EdgeInsets.only(right: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(left: 24),
+                child: Text(
+                  "Service",
+                  style: const TextStyle(
+                    color: Color(0xFF939094),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
                   ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  const Text(
-                    "Services",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Column(
-                          children: const [
-                            Icon(
-                              Icons.send,
-                              size: 30,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Send",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Column(
-                          children: const [
-                            Icon(
-                              Icons.request_page,
-                              size: 30,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Payment",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Column(
-                          children: const [
-                            Icon(
-                              // Icons.history,
-                              //icon for bill
-                              Icons.history_edu,
-                              size: 30,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Bill",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            //a group of circled icons ended with plus icon to add a new child . the icons are clickable including the plus icon.
-            //they are surrounded by a box with border and a title intersecting the box named "My Children"
-            //take care of flex and alignment , the circled icons are a bit small and scrollable
-
-            Container(
-              margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1,
                 ),
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.white,
-                    blurRadius: 10,
-                    offset: Offset(0, 5),
-                  ),
-                ],
               ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        "My Children",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+              const SizedBox(
+                height: 20,
+              ),
+              ServiceButtonsRow()
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 24,
+        ),
+        Container(
+          alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.only(left: 24),
+          child: Text(
+            "Add Children",
+            style: const TextStyle(
+              color: Color(0xFF939094),
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 24),
+                        child: Image.asset(
+                          "assets/images/dashboard/add_icon3.png",
+                          height: 54,
+                          width: 54,
                         ),
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: addIcon,
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(
-                    height: 20,
-                  ),
-
-                  /////////////////////////////////////////////////////
-                  ///
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        //iterate over the list of children and display them
-                        for (var child in children)
-                          ChildIconForParent(
-                            childImage: child.childImage,
-                            childName: child.childName,
-                          ),
-                      ],
                     ),
-                  ),
-
-                  // section named "Recent transactions"
-                  //under it we make tiles with a leading icon, a title and a subtitle and a trailing amount of money
-                  //iterates over a list of transactions and display them
-                ],
-              ),
-            ),
-            //a title "Recent Transactions" with a list of tiles under it with a leading icon, a title and a subtitle and a trailing amount of money
-            //iterates over a list of transactions and display them
-            Container(
-              margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1,
+                    //iterate over the list of children and display them
+                    for (var child in children)
+                      ChildIconForParent(
+                        childImage: child.childImage,
+                        childName: child.childName,
+                      ),
+                  ],
                 ),
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.white,
-                    blurRadius: 10,
-                    offset: Offset(0, 5),
-                  ),
-                ],
               ),
-              child: Column(
-                children: [
-                  const Text(
-                    "Recent Transactions",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  //iterate over the list of transactions and display them
-                  for (var transaction in transactions)
-                    ListTile(
-                      leading: const Icon(
-                        Icons.send,
-                        size: 30,
-                      ),
-                      title: Text(transaction.header),
-                      subtitle: Text(transaction.subHeader),
-                      trailing: Text(transaction.trailing.toString()),
-                    ),
-                ],
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        Container(
+          alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.only(left: 24),
+          child: Text(
+            "Transactions",
+            style: const TextStyle(
+              color: Color(0xFF939094),
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+          child: SizedBox(
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.0),
+                color: Colors.white,
               ),
-            )
-          ],
-        ));
+              width: MediaQuery.of(context).size.width,
+              child: TransactionListWidget(transactionLists: transactionLists),
+            ),
+          ),
+        ),
+      ],
+    ));
+  }
+}
+
+class ServiceButtonsRow extends StatelessWidget {
+  const ServiceButtonsRow({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 80,
+                height: 72,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: Color(0xffE3E3E4)),
+                // color: Color(0xffE3E3E4),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    sendIcon,
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Text(
+                "Send",
+                style: TextStyle(
+                  color: Color(0xff1A1A1A),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                ),
+              )
+            ],
+          ),
+          Spacer(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 80,
+                height: 72,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: Color(0xffE3E3E4)),
+                // color: Color(0xffE3E3E4),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    paymentIcon,
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Text(
+                "Payment",
+                style: TextStyle(
+                  color: Color(0xff1A1A1A),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                ),
+              )
+            ],
+          ),
+          Spacer(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 80,
+                height: 72,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: Color(0xffE3E3E4)),
+                // color: Color(0xffE3E3E4),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    billIcon,
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Text(
+                "Send",
+                style: TextStyle(
+                  color: Color(0xff1A1A1A),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -256,7 +256,7 @@ class ChildIconForParent extends StatelessWidget {
     required this.childImage,
   }) : super(key: key);
   String? childName;
-  String? childImage;
+  Widget? childImage;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -265,14 +265,14 @@ class ChildIconForParent extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {},
-            child: const CircleAvatar(
+            child: CircleAvatar(
               radius: 30,
-              foregroundColor: Colors.lightBlueAccent,
-              //AssetImage(childImage!),
+              backgroundColor: Color(0xFFEFEFEF),
+              child: childImage,
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 4,
           ),
           Text(
             childName!,
@@ -295,14 +295,12 @@ class BalanceBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
+      // margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
       padding: const EdgeInsets.all(20),
+      height: 152,
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey,
-          width: 1,
-        ),
-        borderRadius: BorderRadius.circular(10),
+        color: Color(0xFF333E96),
+        borderRadius: BorderRadius.only(bottomRight: Radius.circular(24)),
         boxShadow: const [
           BoxShadow(
             color: Colors.white,
@@ -310,25 +308,77 @@ class BalanceBox extends StatelessWidget {
             offset: Offset(0, 5),
           ),
         ],
+        //make the bottom right corner of the box rounded
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          //contains a word balance and a balance amount
-          Text(
-            "Balance",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              //contains a word balance and a balance amount
+              Text(
+                "Hello",
+                style: TextStyle(
+                  color: Color(0xffE3E3E4),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Spacer(),
+              InkWell(onTap: () {}, child: notificationIcon)
+            ],
           ),
-          Text(
-            "1000",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+          SizedBox(
+            height: 16,
           ),
+          Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
+                  Text(
+                    "Balance",
+                    style: TextStyle(
+                      color: Color(0xffCCCCCC),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    "10,000 EGP",
+                    style: TextStyle(
+                      color: Color(0xffE3E3E4),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              Spacer(),
+              Column(
+                children: [
+                  InkWell(
+                    child: addIcon2,
+                    onTap: () {},
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    "Add",
+                    style: TextStyle(
+                      color: Color(0xffE3E3E4),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          )
         ],
       ),
     );

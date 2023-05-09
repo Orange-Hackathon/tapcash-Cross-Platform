@@ -1,9 +1,9 @@
 //a scaffold that contains the insights of the user
 import 'package:flutter/material.dart';
 import 'package:orange_hackathon_flutter/models/dashboard/dashboard_home_model.dart';
-import '../../widgets/bar_graph.dart';
-import '../../widgets/months_wraps.dart';
-import '../../widgets/pie_graph.dart';
+import '../../widgets/dashboard/bar_graph.dart';
+import '../../widgets/dashboard/months_wraps.dart';
+import '../../widgets/dashboard/pie_graph.dart';
 
 class DashboardInsights extends StatelessWidget {
   static const routename = '/dashboard/insights';
@@ -77,23 +77,26 @@ class DashboardInsights extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        SizedBox(
-          width: 312,
-          height: 176,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24.0),
-              color: Colors.white,
-              // color: const Colors.White,
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+          child: SizedBox(
+            width: 312,
+            height: 176,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.0),
+                color: Colors.white,
+                // color: const Colors.White,
+              ),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: const BarChartSample3(),
             ),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: const BarChartSample3(),
           ),
         ),
         // Text( "Categories")
         const SizedBox(
-          height: 16,
+          height: 24,
         ),
         Container(
           alignment: Alignment.centerLeft,
@@ -103,7 +106,7 @@ class DashboardInsights extends StatelessWidget {
             style: TextStyle(
               color: Color(0xFF939094),
               fontWeight: FontWeight.w400,
-              fontSize: 10,
+              fontSize: 12,
             ),
           ),
         ),
@@ -111,18 +114,21 @@ class DashboardInsights extends StatelessWidget {
           height: 16,
         ),
 
-        SizedBox(
-          width: 312,
-          height: 200,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24.0),
-              color: Colors.white,
-              // color: const Colors.White,
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+          child: SizedBox(
+            width: 312,
+            height: 200,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.0),
+                color: Colors.white,
+                // color: const Colors.White,
+              ),
+              width: MediaQuery.of(context).size.width,
+              child: const PieChartSample2(),
+              // height: MediaQuery.of(context).size.height,
             ),
-            width: MediaQuery.of(context).size.width,
-            child: const PieChartSample2(),
-            // height: MediaQuery.of(context).size.height,
           ),
         ),
       ]),

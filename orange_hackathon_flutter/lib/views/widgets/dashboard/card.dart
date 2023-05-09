@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/dashboard/dashboard_home_model.dart';
+import '../../../models/dashboard/dashboard_home_model.dart';
 
 class VisaCard extends StatelessWidget {
   const VisaCard({
@@ -54,18 +54,19 @@ class VisaCard extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 35,
+              height: 30,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Padding(
-                  padding: EdgeInsets.only(left: 47),
+                  padding: EdgeInsets.only(left: 0),
                   child: Text(
                     "1234",
                     style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
                     ),
                   ),
                 ),
@@ -76,8 +77,8 @@ class VisaCard extends StatelessWidget {
                   "1234",
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
                   ),
                 ),
                 SizedBox(
@@ -87,8 +88,8 @@ class VisaCard extends StatelessWidget {
                   "1234",
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
                   ),
                 ),
                 SizedBox(
@@ -98,8 +99,8 @@ class VisaCard extends StatelessWidget {
                   "1234",
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
                   ),
                 ),
               ],
@@ -108,7 +109,7 @@ class VisaCard extends StatelessWidget {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 47),
+              padding: const EdgeInsets.only(left: 38),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
@@ -124,7 +125,7 @@ class VisaCard extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             Container(
               alignment: Alignment.centerLeft,
@@ -138,7 +139,7 @@ class VisaCard extends StatelessWidget {
                         style: TextStyle(
                           color: Color(0xffCCCCCC),
                           fontWeight: FontWeight.w500,
-                          fontSize: 14,
+                          fontSize: 12,
                         ),
                       ),
                     ],

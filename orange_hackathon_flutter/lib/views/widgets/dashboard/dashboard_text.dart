@@ -19,7 +19,7 @@ class GreyLabel extends StatelessWidget {
         style: const TextStyle(
           color: Color(0xFF939094),
           fontWeight: FontWeight.w400,
-          fontSize: 12,
+          fontSize: 14,
         ),
       ),
     );

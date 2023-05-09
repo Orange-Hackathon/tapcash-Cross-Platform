@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../models/dashboard/dashboard_home_model.dart';
-import '../../widgets/dashboard_text.dart';
+import '../../widgets/dashboard/dashboard_text.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
