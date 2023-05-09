@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/methods/show_search_contacts_bottom_sheet.dart';
+import 'package:orange_hackathon_flutter/methods/show_send_bottom_sheet.dart';
 
 class PhoneContactElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        showPhoneContactsSheet(context);
+        showSendSheet(context);
       },
       child: Row(
       children: [
