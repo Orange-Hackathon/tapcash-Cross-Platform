@@ -44,6 +44,7 @@ class ElectricityBillsScreen extends StatelessWidget {
                     color: HexColor("#EFEFEF"),
                   ),
                   child: TextFormField(
+                    
                     cursorColor: Colors.transparent,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(

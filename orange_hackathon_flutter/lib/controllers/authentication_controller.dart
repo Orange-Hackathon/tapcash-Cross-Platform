@@ -9,9 +9,7 @@ class AuthenticationUIProvider extends ChangeNotifier {
 
   bool isEmailInValid = false;
 
-  bool isElectricityCompaniesShown=false;
-
-
+  bool isElectricityCompaniesShown = false;
 
   bool isPhoneLoginLabelVisible = true;
   bool isPinLoginLabelVisible = true;
@@ -77,9 +75,8 @@ class AuthenticationUIProvider extends ChangeNotifier {
     }
   }
 
-  showUnShowElectricityCompanies()
-  {
-    isElectricityCompaniesShown=!isElectricityCompaniesShown;
+  showUnShowElectricityCompanies() {
+    isElectricityCompaniesShown = !isElectricityCompaniesShown;
     notifyListeners();
   }
 }
