@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/services/authentication_services.dart';
 import 'package:orange_hackathon_flutter/views/screens/authentication/splash_screen.dart';
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.white, // Change this to your desired color
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: HexColor("#EFEFEF"), // Change this to your desired color
     ));
 
     return MultiProvider(
@@ -31,10 +32,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Orange',
         theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(
+              systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: HexColor("#EFEFEF"),
+          )),
+          scaffoldBackgroundColor: HexColor("#EFEFEF"),
           primarySwatch: Colors.blue,
         ),
-        home:Test(), 
+        home: Test(),
         //const SplashScreen(),
       ),
     );
