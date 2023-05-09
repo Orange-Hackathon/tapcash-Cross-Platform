@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-
-void showDefaultBottomSheet(BuildContext context, String text1,String text2,String buttonText,Function buttonFunc) {
+void showDefaultBottomSheet(BuildContext context, String text1, String text2,
+    String buttonText, Function buttonFunc) {
   showModalBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(
@@ -23,7 +23,15 @@ void showDefaultBottomSheet(BuildContext context, String text1,String text2,Stri
           ),
           child: Column(
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 16),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 150),
+                child: Text(
+                  "______________",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              const SizedBox(height: 32),
               Icon(
                 Icons.check_circle_outline_rounded,
                 size: 72,
@@ -37,7 +45,7 @@ void showDefaultBottomSheet(BuildContext context, String text1,String text2,Stri
                     fontFamily: 'poppins',
                     fontWeight: FontWeight.w400),
               ),
-               Text(
+              Text(
                 text2,
                 style: const TextStyle(
                     fontSize: 12,
@@ -51,30 +59,27 @@ void showDefaultBottomSheet(BuildContext context, String text1,String text2,Stri
                   padding:
                       const EdgeInsets.only(left: 24, right: 24, bottom: 0),
                   child: Container(
-                    height: 40,
-                    width: 146,
-                    child: ElevatedButton(
-      onPressed: () {
-        buttonFunc();
-
-      },
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.circular(10.0), 
-        ),
-        primary: HexColor("#333E96"), 
-      ),
-      child: Text(
-        buttonText,
-        style: TextStyle(
-            fontSize: 14.0,
-            color: HexColor("#F7F7F7"),
-            fontWeight: FontWeight.w400,
-            fontFamily: 'poppins'),
-      ),
-    )
-                  )),
+                      height: 40,
+                      width: 146,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          buttonFunc();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          primary: HexColor("#333E96"),
+                        ),
+                        child: Text(
+                          buttonText,
+                          style: TextStyle(
+                              fontSize: 14.0,
+                              color: HexColor("#F7F7F7"),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'poppins'),
+                        ),
+                      ))),
             ],
           ));
     },
