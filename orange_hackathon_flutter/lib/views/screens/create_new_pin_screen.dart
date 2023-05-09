@@ -4,14 +4,13 @@ import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart'
 import 'package:orange_hackathon_flutter/views/screens/login_screen.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 
-
 // ignore: must_be_immutable
 class CreateNewPinScreen extends StatelessWidget {
   var pin1Controller = TextEditingController();
   var pin2Controller = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   CreateNewPinScreen({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +18,8 @@ class CreateNewPinScreen extends StatelessWidget {
     final double screenHeight = size.height;
     return Scaffold(
       body: SingleChildScrollView(
+          child: Form(
+        key: formKey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,6 +79,15 @@ class CreateNewPinScreen extends StatelessWidget {
                   color: HexColor("#EFEFEF"),
                 ),
                 child: TextFormField(
+                  validator: (val) {
+                    if (val!.isEmpty) {
+                      return 'Please enter your PIN';
+                    } else if (val.length != 4) {
+                      return 'Your PIN must be 4 digits';
+                    } else {
+                      return null;
+                    }
+                  },
                   cursorColor: Colors.black,
                   maxLength: 4,
                   obscureText: true,
@@ -86,6 +96,11 @@ class CreateNewPinScreen extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   onTap: () {},
                   decoration: InputDecoration(
+                      errorStyle: const TextStyle(
+                          fontFamily: 'poppins',
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.red),
                       counterText: '',
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 10),
@@ -125,6 +140,15 @@ class CreateNewPinScreen extends StatelessWidget {
                   color: HexColor("#EFEFEF"),
                 ),
                 child: TextFormField(
+                  validator: (val) {
+                    if (val!.isEmpty) {
+                      return 'Please enter your PIN again';
+                    } else if (val.length != 4) {
+                      return 'Your PIN must be 4 digits';
+                    } else if (pin1Controller.text != pin2Controller.text) {
+                      return 'The two PINs are not identical';
+                    }
+                  },
                   cursorColor: Colors.black,
                   maxLength: 4,
                   obscureText: true,
@@ -133,6 +157,11 @@ class CreateNewPinScreen extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   onTap: () {},
                   decoration: InputDecoration(
+                      errorStyle: const TextStyle(
+                          fontFamily: 'poppins',
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.red),
                       counterText: '',
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 10),
@@ -157,16 +186,20 @@ class CreateNewPinScreen extends StatelessWidget {
                   width: double.infinity,
                   child: DefaultButton(
                       onSubmitted: () {
-                        showDefaultBottomSheet(
-                            context,
-                            'Your PIN has been reset successfully',
-                            'Tap below to Login',
-                            'Login', () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
-                        });
+                        if (formKey.currentState!.validate()) {
+                          if (pin1Controller.text == pin2Controller.text) {
+                            showDefaultBottomSheet(
+                                context,
+                                'Your PIN has been reset successfully',
+                                'Tap below to Login',
+                                'Login', () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
+                            });
+                          }
+                        }
                       },
                       color: HexColor("#333E96"),
                       text: "Reset PIN",
@@ -174,7 +207,7 @@ class CreateNewPinScreen extends StatelessWidget {
                 )),
           ],
         ),
-      ),
+      )),
     );
   }
 }
