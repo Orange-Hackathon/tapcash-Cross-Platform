@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
-
+import 'package:orange_hackathon_flutter/methods/show_receipt_bottom_sheet.dart';
 
 void showSendSheet(BuildContext context) {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -63,7 +60,7 @@ void showSendSheet(BuildContext context) {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const[
+                      children: const [
                         Text(
                           "Send to Habiba",
                           style: TextStyle(
@@ -86,12 +83,11 @@ void showSendSheet(BuildContext context) {
                       height: 24,
                     ),
                     Row(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const SizedBox(
-                          width: 100,
-                        ),
                         Expanded(
+                            child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 100),
                           child: Container(
                             height: 48,
                             width: double.infinity,
@@ -100,6 +96,11 @@ void showSendSheet(BuildContext context) {
                               color: Colors.white,
                             ),
                             child: TextFormField(
+                              onEditingComplete: () {
+                                if (formKey.currentState!.validate()) {
+                                  showReceiptSheet(context,cashController.text);
+                                }
+                              },
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly
                               ],
@@ -118,6 +119,14 @@ void showSendSheet(BuildContext context) {
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: const InputDecoration(
+                                suffix: Text(
+                                  "EGP",
+                                  style: TextStyle(
+                                      fontFamily: 'poppins',
+                                      fontSize: 29,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black),
+                                ),
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 0),
                                 errorStyle: TextStyle(
@@ -129,41 +138,9 @@ void showSendSheet(BuildContext context) {
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Expanded(
-                            child: Text(
-                          "EGP",
-                          style: TextStyle(
-                              fontFamily: 'poppins',
-                              fontSize: 29,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black),
-                        ))
+                        )),
                       ],
                     ),
-                    const SizedBox(
-                      height: 290,
-                    ),
-                    Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 24,
-                        ),
-                        child: SizedBox(
-                          height: 48,
-                          width: double.infinity,
-                          child: DefaultButton(
-                              onSubmitted: () {
-                                if (formKey.currentState!.validate()) {
-                                  showDefaultBottomSheet(context, 'Your transaction was successful', '', 'Done',(){ Navigator.pop(context);});
-                                }
-                              },
-                              color: HexColor("#333E96"),
-                              text: "Login",
-                              textColor: HexColor("#F7F7F7")),
-                        )),
                   ],
                 ),
               )));
