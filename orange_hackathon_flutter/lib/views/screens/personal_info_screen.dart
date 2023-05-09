@@ -174,9 +174,10 @@ class PersonalInfoScreen extends StatelessWidget {
                               if (emailController.text != '' &&
                                   firstNameController.text != '' &&
                                   lastNameController.text != '' &&
-                                  EmailValidator.validate(emailController.text))
-                                  pageController.nextPage(
+                                  EmailValidator.validate(emailController.text)) {
+                                pageController.nextPage(
                                     duration: kDuration, curve: kCurve);
+                              }
                             },
                             color: HexColor("#E3E3E4"),
                             textColor: HexColor("#939094"),
