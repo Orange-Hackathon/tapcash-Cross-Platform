@@ -9,10 +9,9 @@ class AuthenticationUIProvider extends ChangeNotifier {
 
   bool isEmailInValid = false;
 
-  TextEditingController firstNameController = TextEditingController();
+  bool isElectricityCompaniesShown=false;
 
-  TextEditingController lastNameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
+
 
   bool isPhoneLoginLabelVisible = true;
   bool isPinLoginLabelVisible = true;
@@ -76,5 +75,11 @@ class AuthenticationUIProvider extends ChangeNotifier {
     } else {
       return false;
     }
+  }
+
+  showUnShowElectricityCompanies()
+  {
+    isElectricityCompaniesShown=!isElectricityCompaniesShown;
+    notifyListeners();
   }
 }

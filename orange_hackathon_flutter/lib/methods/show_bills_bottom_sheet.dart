@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange_hackathon_flutter/views/screens/bills/electricity/electricity_bills_screen.dart';
 
 void showBillsBottomSheet(BuildContext context) {
   showModalBottomSheet(
@@ -55,6 +56,13 @@ void showBillsBottomSheet(BuildContext context) {
                           child: Column(
                         children: [
                           InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ElectricityBillsScreen()));
+                            },
                             child: CircleAvatar(
                               radius: 32,
                               backgroundColor: HexColor("#EFEFEF"),
