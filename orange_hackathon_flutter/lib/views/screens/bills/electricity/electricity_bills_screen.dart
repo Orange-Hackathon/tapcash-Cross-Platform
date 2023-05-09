@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
+import 'package:orange_hackathon_flutter/views/screens/bills/electricity/electricity_bill_user_id_screen.dart';
 import 'package:provider/provider.dart';
 
 class ElectricityBillsScreen extends StatelessWidget {
+  const ElectricityBillsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +44,7 @@ class ElectricityBillsScreen extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18.0),
-                      color: HexColor("#EFEFEF"),
+                      color: HexColor("#F7F7F7"),
                     ),
                     child: Row(
                       children: [
@@ -84,7 +87,15 @@ class ElectricityBillsScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ElectricityBillUserIDScreen(
+                                                  companyName:
+                                                      "Canal Electricity")));
+                                },
                                 child: const Text("Canal Electricity",
                                     style: TextStyle(
                                         fontFamily: 'poppins',
@@ -96,7 +107,15 @@ class ElectricityBillsScreen extends StatelessWidget {
                                 height: 16,
                               ),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ElectricityBillUserIDScreen(
+                                                  companyName:
+                                                      "Middle Egypt Electricity")));
+                                },
                                 child: const Text("Middle Egypt Electricity",
                                     style: TextStyle(
                                         fontFamily: 'poppins',
@@ -108,7 +127,15 @@ class ElectricityBillsScreen extends StatelessWidget {
                                 height: 16,
                               ),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ElectricityBillUserIDScreen(
+                                                  companyName:
+                                                      "Middle Egypt Electricity")));
+                                },
                                 child: const Text("Middle Egypt Electricity",
                                     style: TextStyle(
                                         fontFamily: 'poppins',
@@ -120,7 +147,9 @@ class ElectricityBillsScreen extends StatelessWidget {
                                 height: 16,
                               ),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ElectricityBillUserIDScreen(companyName: "InJaz Electricity")));
+                                },
                                 child: const Text("InJaz Electricity",
                                     style: TextStyle(
                                         fontFamily: 'poppins',

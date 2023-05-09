@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 // ignore: must_be_immutable
 class DefaultButton extends StatelessWidget {
   late Function onSubmitted;
@@ -24,7 +23,7 @@ class DefaultButton extends StatelessWidget {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius:
-              BorderRadius.circular(10.0), // Adjust the radius as needed
+              BorderRadius.circular(17.0), // Adjust the radius as needed
         ),
         primary: color, // Set the background color
       ),
