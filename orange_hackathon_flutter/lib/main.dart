@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/services/authentication_services.dart';
 import 'package:orange_hackathon_flutter/views/screens/authentication/splash_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/authentication/test.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           primarySwatch: Colors.blue,
         ),
-        home: const SplashScreen(),
+        home:Test(), 
+        //const SplashScreen(),
       ),
     );
   }
