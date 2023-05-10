@@ -20,7 +20,6 @@
 - [🏁 Getting started](#getting-started)
 - [📦 Packages used](#packages-used)
 - [📷 Features](#features)
-- [🏁 API Documentation](#API-Documentation)
 - [✍️ Contributors](#contributors)
 - [💻 Presentation](#presentation)    
 - [🔒 License](#license)
