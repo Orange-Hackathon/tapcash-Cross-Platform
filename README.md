@@ -179,7 +179,7 @@
 
 
 
-## 🔒 License <a name = "license"></a>
+## 🔒 License 
 
 > This software is licensed under MIT License, See [License](https://github.com/CMP24-SWE-TEAM3/Backend/blob/main/LICENSE) .
 
