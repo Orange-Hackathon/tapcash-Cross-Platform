@@ -9,10 +9,9 @@
 </div>
 
 
-<details open="open">
-<summary>
+
 <h2 style="display:inline">📝 Table of Contents</h2>
-</summary>
+
 
  
 - [📑 About](#about)
@@ -40,10 +39,7 @@
  </ul>
 
 ## 🏁 Getting started    
-<blockquote>
-  <p>This is a list of needed steps to set up your project locally, to get a local copy up and running follow these instructions.
- </p>
-</blockquote>
+
 <ol>
   <li><strong><em>Clone the repository</em></strong>
     <div>
