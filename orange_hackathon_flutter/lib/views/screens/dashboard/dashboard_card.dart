@@ -30,6 +30,7 @@ class DashboardCard extends StatelessWidget {
         title: const Text(
           'Card',
           style: TextStyle(
+            fontFamily: 'poppins',
             color: Colors.black,
             fontWeight: FontWeight.w500,
             fontSize: 16,

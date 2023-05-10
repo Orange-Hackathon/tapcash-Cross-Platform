@@ -35,6 +35,7 @@ class VisaCard extends StatelessWidget {
                       Text(
                         "Balance",
                         style: TextStyle(
+                          fontFamily: 'poppins',
                           color: Colors.white,
                           fontWeight: FontWeight.w400,
                           fontSize: 12,
@@ -43,6 +44,7 @@ class VisaCard extends StatelessWidget {
                       Text(
                         "10,000 EGP",
                         style: TextStyle(
+                          fontFamily: 'poppins',
                           color: Color(0xffCCCCCC),
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -63,6 +65,7 @@ class VisaCard extends StatelessWidget {
                   child: Text(
                     "1234",
                     style: TextStyle(
+                      fontFamily: 'poppins',
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
@@ -75,6 +78,7 @@ class VisaCard extends StatelessWidget {
                 Text(
                   "1234",
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
@@ -86,6 +90,7 @@ class VisaCard extends StatelessWidget {
                 Text(
                   "1234",
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
@@ -97,6 +102,7 @@ class VisaCard extends StatelessWidget {
                 Text(
                   "1234",
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
@@ -115,6 +121,7 @@ class VisaCard extends StatelessWidget {
                   Text(
                     "EXP 24hr",
                     style: TextStyle(
+                      fontFamily: 'poppins',
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
@@ -136,6 +143,7 @@ class VisaCard extends StatelessWidget {
                       Text(
                         "Mamdouh Ahmed",
                         style: TextStyle(
+                          fontFamily: 'poppins',
                           color: Color(0xffCCCCCC),
                           fontWeight: FontWeight.w500,
                           fontSize: 14,

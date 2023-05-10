@@ -33,6 +33,7 @@ class UserProfile extends StatelessWidget {
             child: Text(
               "M",
               style: TextStyle(
+                fontFamily: 'poppins',
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 38,
@@ -46,6 +47,7 @@ class UserProfile extends StatelessWidget {
             child: Text(
               "Mamdouh",
               style: TextStyle(
+                fontFamily: 'poppins',
                 color: Color(0xFF1A1A1A),
                 fontWeight: FontWeight.w500,
                 fontSize: 16,
@@ -63,6 +65,7 @@ class UserProfile extends StatelessWidget {
                 child: const Text(
                   "Mamdouh Ahmed",
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     color: Color(0xFF333E96),
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
@@ -92,6 +95,7 @@ class UserProfile extends StatelessWidget {
             child: const Text(
               "mamdouhattia31@gmail.com",
               style: TextStyle(
+                fontFamily: 'poppins',
                 color: Color(0xFF1A1A1A),
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
@@ -106,6 +110,7 @@ class UserProfile extends StatelessWidget {
             child: const Text(
               "+201275400234",
               style: TextStyle(
+                fontFamily: 'poppins',
                 color: Color(0xFF1A1A1A),
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
@@ -159,6 +164,7 @@ class UserProfile extends StatelessWidget {
               child: const Text(
                 "Chat Support",
                 style: TextStyle(
+                  fontFamily: 'poppins',
                   color: Color(0xFF333E96),
                   fontWeight: FontWeight.w400,
                   fontSize: 12,

@@ -30,6 +30,7 @@ class DashboardInsights extends StatelessWidget {
           title: const Text(
             'Insights',
             style: TextStyle(
+              fontFamily: 'poppins',
               color: Colors.black,
               fontWeight: FontWeight.w500,
               fontSize: 16,
