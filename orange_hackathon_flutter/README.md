@@ -22,6 +22,7 @@
 - [📷 Features](#features)
 - [🏁 API Documentation](#API-Documentation)
 - [✍️ Contributors](#contributors)
+- [💻 Presentation](#presentation)    
 - [🔒 License](#license)
 </details>
 <hr>
@@ -144,15 +145,17 @@
 <h3 style="display:inline">
 <strong><em> 💌 Notifications & Ways to send money </em></strong></h3>
 </summary>
-<div align="center">
- 
+<div align="center"> 
    <img src="./screenshots/notifications.jpg">
 </div>
 
+<h2 href="#presentation"> 💻 Presentation</h2>
+<li><a href="https://docs.google.com/presentation/d/1IC-2Cvxh4LbfgxtxTxzCyrZzTY8DJjav/edit?usp=sharing&ouid=110465526778989286253&rtpof=true&sd=true">Presentation link</a></li>
 
-<h2 href="#Contributors">Contributors</h2>
 
 
+
+<h2 href="#Contributors">✍️ Contributors</h2>
 <table>
   <tr>
 
@@ -165,12 +168,7 @@
 <a href="https://github.com/hebaashraf21" target="_black">
 <img src="https://avatars.githubusercontent.com/u/20935242?s=80&v=4" width="150px;" alt="Heba Ashraf"/><br /><sub><b>Heba Ashraf</b></sub></a><br />
 </td>
-
-
 </tr>
-    
-
-
 </table>
 
 
