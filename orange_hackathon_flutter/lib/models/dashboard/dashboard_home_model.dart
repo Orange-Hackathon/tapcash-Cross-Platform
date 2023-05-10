@@ -50,19 +50,19 @@ class Transaction {
 List<Transaction> transactions = [
   Transaction(
       icon: Icons.shopping_bag,
-      header: 'Shopping',
-      subHeader: 'Shopping at Carrefour',
-      trailing: 1000),
+      header: 'Amazon',
+      subHeader: '5 pm',
+      trailing: 2500),
   Transaction(
       icon: Icons.shopping_bag,
-      header: 'Shopping',
-      subHeader: 'Shopping at Carrefour',
-      trailing: 1000),
+      header: 'Jumia',
+      subHeader: '10 am',
+      trailing: 700),
   Transaction(
       icon: Icons.shopping_bag,
-      header: 'Shopping',
-      subHeader: 'Shopping at Carrefour',
-      trailing: 1000),
+      header: 'Carrefour',
+      subHeader: '3 pm',
+      trailing: 150),
 ];
 
 final Widget addIcon = Image.asset(
