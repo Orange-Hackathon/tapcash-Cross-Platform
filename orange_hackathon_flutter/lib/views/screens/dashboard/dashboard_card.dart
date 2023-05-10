@@ -52,11 +52,37 @@ class DashboardCard extends StatelessWidget {
         SizedBox(
           height: 12,
         ),
-        //make a horizontal sliding list of store logos
-        // Padding(padding: EdgeInsets.fromLTRB(28, 0, 28, 0), child: 
-        // //sliding list of containers with a floating button arrow to the right to slide view od containers by one
-        // // SingleChildScrollView(child: ,)
-        // ),
+        Container(
+          // margin: const EdgeInsets.only(left: 24, right: 24),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 24),
+            child: Column(
+              children: [
+                Scrollbar(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        for (var brand in brandIcons)
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              color: Color(0xffD9D9D9),
+                            ),
+                            width: 100,
+                            height: 48,
+                            child: brand,
+                          )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ]),
     );
   }

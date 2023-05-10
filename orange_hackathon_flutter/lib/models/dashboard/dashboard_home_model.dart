@@ -135,20 +135,25 @@ final Widget refresh = Image.asset(
   width: 24,
 );
 final Widget amazon = Image.asset(
-  "assets/images/dashboard/amazon.png",
+  "assets/images/dashboard/Amazon.png",
   height: 36,
   width: 76,
 );
 final Widget dunkin = Image.asset(
-  "assets/images/dashboard/dunkin.png",
+  "assets/images/dashboard/Dunkin.png",
   height: 44,
   width: 78,
 );
 
 final Widget jumia = Image.asset(
-  "assets/images/dashboard/jumia.png",
+  "assets/images/dashboard/Jumia.png",
   height: 47,
   width: 83,
+);
+final Widget starbucks = Image.asset(
+  "assets/images/dashboard/starbucks.png",
+  height: 27,
+  width: 87,
 );
 
 const Gradient qrGradient = LinearGradient(
@@ -170,3 +175,11 @@ const Gradient cardGradient = LinearGradient(
   ],
 );
 //icons
+
+//list of brand icons
+List<Widget> brandIcons = [
+  amazon,
+  jumia,
+  dunkin,
+  starbucks,
+];
