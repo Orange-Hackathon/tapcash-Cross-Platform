@@ -2,7 +2,7 @@
 
 <div align="center">
     <h1 align='center'>⚡️<i>Orange Hackathon</i>⚡️</h1>
-   <img src="/screenshots/tapcash.jpg">
+   <img src="./screenshots/tapcash.jpg">
 
 
 
@@ -54,49 +54,77 @@
 </ol>
 
 
+
 ## 📷 Features
 
-<details>
+
 <summary>
 <h4 style="display:inline">
 <strong><em>🔒 User Authentication</em></strong></h4>
 </summary>
-
-- Sign up
-- Login in
-- Forget PIN
-
 <div align="center">
  
-   <img src="/readme files/Login.png">
-    <img src="/readme files/Sign up 1.png">
-    <img src="/readme files/reset PIN 1.png">
+   <img src="./screenshots/auth1.jpg">
+    <img src="./screenshots/auth2.jpg">
+    <img src="./screenshots/auth3.jpg">
 
 </div>
 
- 
-</details>
 
-<details>
 <summary>
 <h4 style="display:inline">
-<strong><em> 🙍‍♂️Transactions</em></strong></h4>
+<strong><em>🔒 Home</em></strong></h4>
 </summary>
-
-- Send Money to friends
-- Payments
-- Bills
-
-    
-
-    
+<div align="center">
  
-    
+   <img src="./screenshots/home.jpg">
+</div>
+
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 Children </em></strong></h4>
+</summary>
+<div align="center">
+ 
+   <img src="./screenshots/children.jpg">
+</div>
+
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 Send money to your friends </em></strong></h4>
+</summary>
+<div align="center">
+ 
+   <img src="./screenshots/send.jpg">
+</div>
+
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 Pay your bills </em></strong></h4>
+</summary>
+<div align="center">
+ 
+   <img src="./screenshots/elec_bills.jpg">
+</div>
+
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 Scan QR code </em></strong></h4>
+</summary>
+<div align="center">
+ 
+   <img src="./screenshots/qr.jpg">
+</div>
 
 
-</details>
-
-
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 Notifications & Ways to send money </em></strong></h4>
+</summary>
+<div align="center">
+ 
+   <img src="./screenshots/notifications.jpg">
+</div>
 
 
 <h2 href="#Contributors">Contributors</h2>
@@ -114,6 +142,9 @@
 </tr>
 
 </table>
+
+
+
 
 ## 🔒 License <a name = "license"></a>
 
