@@ -58,7 +58,7 @@ void showDefaultBottomSheet(BuildContext context, String text1, String text2,
               Padding(
                   padding:
                       const EdgeInsets.only(left: 24, right: 24, bottom: 0),
-                  child: Container(
+                  child: SizedBox(
                       height: 40,
                       width: 146,
                       child: ElevatedButton(

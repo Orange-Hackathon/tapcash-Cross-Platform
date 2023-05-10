@@ -41,28 +41,28 @@ class ConfirmPinScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Indicator(
+                OnBoardingIndicator(
                   positionIndex: 0,
                   currentIndex: 3,
                 ),
                 SizedBox(
                   width: 8,
                 ),
-                Indicator(
+                OnBoardingIndicator(
                   positionIndex: 1,
                   currentIndex: 3,
                 ),
                 SizedBox(
                   width: 8,
                 ),
-                Indicator(
+                OnBoardingIndicator(
                   positionIndex: 2,
                   currentIndex: 3,
                 ),
                 SizedBox(
                   width: 8,
                 ),
-                Indicator(
+                OnBoardingIndicator(
                   positionIndex: 3,
                   currentIndex: 3,
                 ),

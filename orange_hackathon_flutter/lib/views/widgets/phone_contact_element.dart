@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:orange_hackathon_flutter/methods/show_add_money_ways.dart';
-import 'package:orange_hackathon_flutter/methods/show_bills_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/methods/show_search_contacts_bottom_sheet.dart';
 import 'package:orange_hackathon_flutter/methods/show_send_bottom_sheet.dart';
 
 class PhoneContactElement extends StatelessWidget {
+  const PhoneContactElement({super.key});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        //showSendSheet(context);
-        //showBillsBottomSheet(context);
-        showAddMoneyWaysBottomSheet(context);
+        showSendSheet(context);
       },
       child: Row(
         children: [

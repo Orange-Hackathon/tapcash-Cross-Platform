@@ -98,7 +98,8 @@ void showSendSheet(BuildContext context) {
                             child: TextFormField(
                               onEditingComplete: () {
                                 if (formKey.currentState!.validate()) {
-                                  showReceiptSheet(context,cashController.text);
+                                  showReceiptSheet(
+                                      context, cashController.text);
                                 }
                               },
                               inputFormatters: [

@@ -3,14 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/methods/show_default_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/services/authentication_services.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class ElectricityBillsAmountScreen extends StatelessWidget {
   late String companyName;
   TextEditingController amountController = TextEditingController();
-  @override
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   ElectricityBillsAmountScreen({super.key, required this.companyName});

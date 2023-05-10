@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:orange_hackathon_flutter/constants/constants.dart';
 
 class AuthenticationUIProvider extends ChangeNotifier {
@@ -21,6 +20,7 @@ class AuthenticationUIProvider extends ChangeNotifier {
 
   String pin = '';
   String pinToConfirm = '';
+   String? phoneNumber;
 
   changeOnBoardingCurrentIndex(index) {
     onBoardingCurrentIndex = index;

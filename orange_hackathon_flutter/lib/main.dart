@@ -4,7 +4,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/services/authentication_services.dart';
 import 'package:orange_hackathon_flutter/views/screens/authentication/splash_screen.dart';
-import 'package:orange_hackathon_flutter/views/screens/authentication/test.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,8 +12,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -39,8 +36,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: HexColor("#EFEFEF"),
           primarySwatch: Colors.blue,
         ),
-        home: Test(),
-        //const SplashScreen(),
+        home: const SplashScreen(),
       ),
     );
   }

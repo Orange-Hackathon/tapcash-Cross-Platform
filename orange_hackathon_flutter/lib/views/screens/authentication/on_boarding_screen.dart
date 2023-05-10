@@ -81,38 +81,32 @@ class OnBoarding extends State<OnBoardingScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Indicator(
+                    OnBoardingIndicator(
                       positionIndex: 0,
                       currentIndex: currentIndex,
                     ),
                     const SizedBox(
                       width: 8,
                     ),
-                    Indicator(
+                    OnBoardingIndicator(
                       positionIndex: 1,
                       currentIndex: currentIndex,
                     ),
                     const SizedBox(
                       width: 8,
                     ),
-                    Indicator(
+                    OnBoardingIndicator(
                       positionIndex: 2,
                       currentIndex: currentIndex,
                     ),
                     const SizedBox(
                       width: 8,
                     ),
-                    Indicator(
+                    OnBoardingIndicator(
                       positionIndex: 3,
                       currentIndex: currentIndex,
                     ),
-                    // const SizedBox(
-                    //   width: 8,
-                    // ),
-                    // Indicator(
-                    //   positionIndex: 4,
-                    //   currentIndex: currentIndex,
-                    // ),
+
                   ],
                 ),
               ),
@@ -131,7 +125,7 @@ class OnBoarding extends State<OnBoardingScreen> {
                     pageController: pageController,
                   ),
                   CreatePinScreen(pageController: pageController),
-                  //ConfirmPinScreen(pageController: pageController)
+
                 ],
               ),
             ],

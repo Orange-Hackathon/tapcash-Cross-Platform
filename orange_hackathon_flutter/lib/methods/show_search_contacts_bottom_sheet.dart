@@ -89,9 +89,9 @@ void showPhoneContactsSheet(BuildContext context) {
                 ),
                 Expanded(
                   child: ListView.separated(
-                      itemBuilder: (context, index) => PhoneContactElement(),
+                      itemBuilder: (context, index) => const PhoneContactElement(),
                       separatorBuilder: (context, index) =>
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                       itemCount: 10),
                 )
               ],

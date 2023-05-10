@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
     return AnimatedSplashScreen(
       splash: 'assets/images/logo.png',
       splashIconSize: 268,
-      nextScreen: OnBoardingScreen(),
+      nextScreen: const OnBoardingScreen(),
       splashTransition: SplashTransition.rotationTransition,
     );
   }

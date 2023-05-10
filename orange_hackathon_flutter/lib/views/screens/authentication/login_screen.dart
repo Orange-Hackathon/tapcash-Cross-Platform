@@ -3,6 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/views/screens/authentication/forgot_pin_screen.dart';
 import 'package:orange_hackathon_flutter/views/screens/authentication/on_boarding_screen.dart';
+import 'package:orange_hackathon_flutter/views/screens/dashboard/dashboard.dart';
 import 'package:orange_hackathon_flutter/views/widgets/default_button.dart';
 import 'package:provider/provider.dart';
 
@@ -186,8 +187,7 @@ class LoginScreen extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              OnBoardingScreen()));
+                                          builder: (context) =>const Dashboard()));
                                 }
                               },
                               color: HexColor("#333E96"),
@@ -210,7 +210,7 @@ class LoginScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            OnBoardingScreen()));
+                                            const OnBoardingScreen()));
                               },
                               color: HexColor("#E3E3E4"),
                               text: "Sign up",
