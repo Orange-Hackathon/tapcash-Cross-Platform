@@ -49,7 +49,7 @@ class PhoneNumberScreen extends StatelessWidget {
                       "Enter yout phone number, please",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 10,
+                          fontSize: 12,
                           fontFamily: 'poppins',
                           color: HexColor("#5E5E5E")),
                     ),
@@ -158,7 +158,7 @@ class PhoneNumberScreen extends StatelessWidget {
                           "Already have an account? ",
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 10,
+                              fontSize: 12,
                               fontFamily: 'poppins',
                               color: HexColor("#939094")),
                         ),
@@ -172,8 +172,8 @@ class PhoneNumberScreen extends StatelessWidget {
                           child: Text(
                             "Login",
                             style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
                                 fontFamily: 'poppins',
                                 color: HexColor("#1A1A1A")),
                           ),

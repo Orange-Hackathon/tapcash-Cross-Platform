@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                     const Text(
                       "Login",
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           fontSize: 16,
                           fontFamily: 'poppins'),
                     ),
@@ -169,7 +169,7 @@ class LoginScreen extends StatelessWidget {
                           child: Text(
                             'Forgot your PIN?',
                             style: TextStyle(
-                                fontSize: 10,
+                                fontSize: 12,
                                 fontFamily: 'poppins',
                                 color: HexColor("#939094"),
                                 fontWeight: FontWeight.w400),

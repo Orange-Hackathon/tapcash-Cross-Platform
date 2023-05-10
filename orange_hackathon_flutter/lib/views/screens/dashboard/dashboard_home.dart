@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/methods/show_bills_bottom_sheet.dart';
 import 'package:orange_hackathon_flutter/methods/show_search_contacts_bottom_sheet.dart';
-import 'package:orange_hackathon_flutter/views/widgets/balance_box.dart';
-import 'package:orange_hackathon_flutter/views/widgets/child_icon.dart';
-
-import '../../../models/dashboard/dashboard_home_model.dart';
 
 class DashboardHome extends StatelessWidget {
   const DashboardHome({super.key});

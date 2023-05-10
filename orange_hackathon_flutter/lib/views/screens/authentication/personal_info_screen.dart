@@ -47,7 +47,7 @@ class PersonalInfoScreen extends StatelessWidget {
                         "Enter your first/last name as your national ID",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            fontSize: 10,
+                            fontSize: 12,
                             fontFamily: 'poppins',
                             color: HexColor("#5E5E5E")),
                       ),
