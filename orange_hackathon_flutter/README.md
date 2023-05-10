@@ -106,7 +106,7 @@
 
 <summary>
 <h3 style="display:inline">
-<strong><em>👨‍👨‍👦‍👦 Children </em></strong></h3>
+<strong><em>👨‍👨‍👦‍👦 Limit your children access </em></strong></h3>
 </summary>
 <div align="center">
  
@@ -115,7 +115,7 @@
 
 <summary>
 <h3 style="display:inline">
-<strong><em>💸 Send money to your friends </em></strong></h3>
+<strong><em>💸 Send to friends </em></strong></h3>
 </summary>
 <div align="center">
  
