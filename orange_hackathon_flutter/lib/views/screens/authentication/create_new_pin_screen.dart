@@ -175,7 +175,7 @@ class CreateNewPinScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 0.386 * screenHeight,
+              height: 0.33 * screenHeight,
             ),
             Padding(
                 padding: const EdgeInsets.symmetric(

@@ -120,7 +120,6 @@ class PhoneNumberScreen extends StatelessWidget {
                                     return null;
                                   }
                                 },
-                                
                                 controller: phoneController,
                                 maxLength: 11,
                                 keyboardType: TextInputType.phone,
@@ -190,21 +189,23 @@ class PhoneNumberScreen extends StatelessWidget {
                             left: 24, right: 24, bottom: 0),
                         child: SizedBox(
                           height: 48,
-                          width: 312,
+                          width: double.infinity,
                           child: DefaultButton(
                               onSubmitted: () async {
                                 if (formKey.currentState!.validate()) {
-                                  bool isPhoneAvailable =
-                                      await value2.checkAvailablePhone(
-                                          phoneController.text);
+                                  pageController.nextPage(
+                                      duration: kDuration, curve: kCurve);
+                                  // bool isPhoneAvailable =
+                                  //     await value2.checkAvailablePhone(
+                                  //         phoneController.text);
 
-                                  if (isPhoneAvailable) {
-                                    pageController.nextPage(
-                                        duration: kDuration, curve: kCurve);
-                                  } else {
-                                    // showToast(
-                                    //     "You already have an account with this number");
-                                  }
+                                  // if (isPhoneAvailable) {
+                                  //   pageController.nextPage(
+                                  //       duration: kDuration, curve: kCurve);
+                                  // } else {
+                                  //   // showToast(
+                                  //   //     "You already have an account with this number");
+                                  // }
                                 }
                               },
                               color: HexColor("#E3E3E4"),

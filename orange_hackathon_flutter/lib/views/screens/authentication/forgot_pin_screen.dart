@@ -25,7 +25,7 @@ class ForgotPinScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 75,
+                      height: 55,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -122,7 +122,7 @@ class ForgotPinScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: .39 * screenHeight),
+                          SizedBox(height: .35 * screenHeight),
                           Padding(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 24,

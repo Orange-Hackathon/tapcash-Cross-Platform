@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:orange_hackathon_flutter/controllers/authentication_controller.dart';
 import 'package:orange_hackathon_flutter/views/screens/authentication/forgot_pin_screen.dart';
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 75,
+                      height: 65,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -67,6 +68,9 @@ class LoginScreen extends StatelessWidget {
                           color: HexColor("#EFEFEF"),
                         ),
                         child: TextFormField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                           maxLength: 11,
                           validator: (val) {
                             if (val!.isEmpty) {
@@ -172,7 +176,7 @@ class LoginScreen extends StatelessWidget {
                           )),
                     ),
                     SizedBox(
-                      height: 0.30 * screenHeight,
+                      height: 0.25 * screenHeight,
                     ),
                     Padding(
                         padding: const EdgeInsets.symmetric(
@@ -187,7 +191,8 @@ class LoginScreen extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>const Dashboard()));
+                                          builder: (context) =>
+                                              const Dashboard()));
                                 }
                               },
                               color: HexColor("#333E96"),

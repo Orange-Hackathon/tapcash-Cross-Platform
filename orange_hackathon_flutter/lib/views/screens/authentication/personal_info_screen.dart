@@ -162,7 +162,7 @@ class PersonalInfoScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 0.32 * screenHeight,
+                        height: 0.3 * screenHeight,
                       ),
                       //Spacer(),
                       SizedBox(
@@ -174,7 +174,8 @@ class PersonalInfoScreen extends StatelessWidget {
                               if (emailController.text != '' &&
                                   firstNameController.text != '' &&
                                   lastNameController.text != '' &&
-                                  EmailValidator.validate(emailController.text)) {
+                                  EmailValidator.validate(
+                                      emailController.text)) {
                                 pageController.nextPage(
                                     duration: kDuration, curve: kCurve);
                               }
