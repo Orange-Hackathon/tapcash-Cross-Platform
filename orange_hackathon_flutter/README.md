@@ -15,21 +15,23 @@
 </summary>
 
  
-- [📷 Features](#features)
+
 - [⛏️ Built With](#built-with)
 - [🏁 Getting started](#getting-started)
+- [📦 Packages used](#packages-used)
+- [📷 Features](#features)
 - [🏁 API Documentation](#API-Documentation)
 - [✍️ Contributors](#contributors)
 - [🔒 License](#license)
 </details>
 <hr>
-<h2 href="#BuiltWith">Built With : </h2>
+<h2 href="#built-with">⛏️ Built With : </h2>
  <ul>
   <li><a href="https://flutter.dev/">Flutter</a></li>
   <li><a href="https://dart.dev/">Dart</a></li>
  </ul>
 <hr>
-<h2 href="#GettingStarted">Getting Started</h2>
+<h2 href="#getting-started">Getting Started</h2>
 <blockquote>
   <p>This is a list of needed steps to set up your project locally, to get a local copy up and running follow these instructions.
  </p>
@@ -53,14 +55,35 @@
 
 </ol>
 
+<h2 href="#packages-used">📦 Packages used : </h2>
+ <ul>
+  <li>cupertino_icons: ^1.0.2</li>
+  <li>provider: ^6.0.5</li>
+  <li>animated_splash_screen: ^1.3.0</li>
+  <li>smooth_page_indicator: ^1.1.0</li>
+  <li>shared_preferences: ^2.1.0</li>
+  <li>pin_code_fields: ^7.4.0</li>
+  <li>intl_phone_field: ^3.1.0</li>
+  <li>hexcolor: ^3.0.1</li>
+  <li>http: ^0.13.5</li>
+  <li>flutter_launcher_icons: ^0.12.0</li>
+  <li>email_validator: ^2.1.17</li>
+  <li>fluttertoast: ^8.2.1</li>
+  <li>custom_navigation_bar: </li>
+  <li>charts_flutter:</li>
+  <li>fl_chart:</li>
+  <li>flutter_svg:</li>
+  <li>intl: ^0.18.1</li>
+ </ul>
+<hr>
 
 
 ## 📷 Features
 
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 User Authentication</em></strong></h4>
+<h3 style="display:inline">
+<strong><em>🔒 User Authentication</em></strong></h3>
 </summary>
 <div align="center">
  
@@ -72,8 +95,8 @@
 
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 Home</em></strong></h4>
+<h3 style="display:inline">
+<strong><em>🏠 Home</em></strong></h3>
 </summary>
 <div align="center">
  
@@ -81,8 +104,8 @@
 </div>
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 Children </em></strong></h4>
+<h3 style="display:inline">
+<strong><em>👨‍👨‍👦‍👦 Children </em></strong></h3>
 </summary>
 <div align="center">
  
@@ -90,8 +113,8 @@
 </div>
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 Send money to your friends </em></strong></h4>
+<h3 style="display:inline">
+<strong><em>💸 Send money to your friends </em></strong></h3>
 </summary>
 <div align="center">
  
@@ -99,8 +122,8 @@
 </div>
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 Pay your bills </em></strong></h4>
+<h3 style="display:inline">
+<strong><em>💳 Pay your bills </em></strong></h3>
 </summary>
 <div align="center">
  
@@ -108,8 +131,8 @@
 </div>
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 Scan QR code </em></strong></h4>
+<h3 style="display:inline">
+<strong><em>📇 Scan QR code </em></strong></h3>
 </summary>
 <div align="center">
  
@@ -118,8 +141,8 @@
 
 
 <summary>
-<h4 style="display:inline">
-<strong><em>🔒 Notifications & Ways to send money </em></strong></h4>
+<h3 style="display:inline">
+<strong><em> 💌 Notifications & Ways to send money </em></strong></h3>
 </summary>
 <div align="center">
  
@@ -134,12 +157,19 @@
   <tr>
 
 <td align="center">
-<a href="https://github.com/AhmedLotfy02" target="_black">
-<img src="https://avatars.githubusercontent.com/u/76037906?v=4" width="150px;" alt="AhmedLotfy02"/><br /><sub><b>Ahmed Lotfy</b></sub></a><br />
+<a href="https://github.com/Mamdouh-Attia" target="_black">
+<img src="https://avatars.githubusercontent.com/u/68287802?v=4" width="150px;" alt="Mamdouh Ahmed"/><br /><sub><b>Mamdouh Attia</b></sub></a><br />
+</td>
+      
+ <td align="center">
+<a href="https://github.com/hebaashraf21" target="_black">
+<img src="https://avatars.githubusercontent.com/u/20935242?s=80&v=4" width="150px;" alt="Heba Ashraf"/><br /><sub><b>Heba Ashraf</b></sub></a><br />
 </td>
 
 
 </tr>
+    
+
 
 </table>
 
