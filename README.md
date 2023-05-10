@@ -15,7 +15,7 @@
 </summary>
 
  
-
+- [📑 About](#about)
 - [⛏️ Built With](#built-with)
 - [🏁 Getting started](#getting-started)
 - [📦 Packages used](#packages-used)
@@ -23,15 +23,23 @@
 - [✍️ Contributors](#contributors)
 - [💻 Presentation](#presentation)    
 - [🔒 License](#license)
-</details>
-<hr>
-<h2 href="#built-with">⛏️ Built With : </h2>
+    
+ 
+    
+## 📑 About
+
+- Tapcash is an E-wallet app to manage user finances. It also allows parents to manage their children's money and teach them how to spend it wisely.
+- The app was built as a requirement for the "Orange hackathon may-2023".     
+
+    
+## ⛏️ Built With
+    
  <ul>
   <li><a href="https://flutter.dev/">Flutter</a></li>
   <li><a href="https://dart.dev/">Dart</a></li>
  </ul>
-<hr>
-<h2 href="#getting-started">Getting Started</h2>
+
+## 🏁 Getting started    
 <blockquote>
   <p>This is a list of needed steps to set up your project locally, to get a local copy up and running follow these instructions.
  </p>
@@ -55,7 +63,9 @@
 
 </ol>
 
-<h2 href="#packages-used">📦 Packages used : </h2>
+
+## 📦 Packages used 
+    
  <ul>
   <li>cupertino_icons: ^1.0.2</li>
   <li>provider: ^6.0.5</li>
